@@ -7,28 +7,22 @@
     <meta name="keywords" content="Star wars, Transformers, The Simpsons, Funko, Tienda Geeks">
     <meta name="author" content="Pau, Gise, Nico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap-Css -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="js/bootstrap.min.js">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css" integrity="sha384-v2Tw72dyUXeU3y4aM2Y0tBJQkGfplr39mxZqlTBDUZAb9BGoC40+rdFCG0m10lXk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/fontawesome.css" integrity="sha384-q3jl8XQu1OpdLgGFvNRnPdj5VIlCvgsDQTQB6owSOHWlAurxul7f+JpUOVdAiJ5P" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
   </head>
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <a class="navbar-brand" href="#">E-commerce</a>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+        <a class="navbar-brand" href="index.html"><img src="images/logo-E.png" alt="logo-E"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#">Ingresar</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Registrarse</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Portada <span class="sr-only">(current)</span></a>
-            </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Productos
@@ -42,15 +36,21 @@
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Preguntas frecuentes</a>
+              <a class="nav-link" href="faq.html">FAQ</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contacto.html">Contacto</a>
+              <a class="nav-link" href="">Contacto</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ingresar.html">Ingresar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="registrarse.html">Registrarse</a>
             </li>
           </ul>
           <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Vamos!</button>
+            <button class="btn btn-outline-success my-2 my-sm-0 buscar" type="submit"><i class="fas fa-search"></i></button>
           </form>
         </div>
       </nav>
@@ -61,22 +61,19 @@
           <div class="carousel-item active">
             <img class="d-block w-100" src="images/slider/slider_star_wars.jpg" alt="First slide">
             <div class="carousel-caption d-none d-md-block">
-              <h5>Producto 1</h5>
-              <p>Detalle 1</p>
+              <h5>Star wars</h5>
             </div>
           </div>
           <div class="carousel-item">
             <img class="d-block w-100" src="images/slider/slider_the_simpsons.jpg" alt="Second slide">
             <div class="carousel-caption d-none d-md-block">
-              <h5>Producto 2</h5>
-              <p>D2talle 2</p>
+              <h5>The simpsons</h5>
             </div>
           </div>
           <div class="carousel-item">
             <img class="d-block w-100" src="images/slider/slider_transformers.jpg" alt="Third slide">
             <div class="carousel-caption d-none d-md-block">
-              <h5>Producto 3</h5>
-              <p>Detalle 3</p>
+              <h5>Transformers</h5>
             </div>
           </div>
         </div>
@@ -132,22 +129,17 @@
       </div>
     </section>
 
-    <!--Footer-->
     <footer>
-
-
-  <!--Footer-->
-  <footer>
 
       <!--Footer Links-->
       <div class="container mt-5 mb-4 text-center text-md-left">
           <div class="row mt-3">
               <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
                   <h6 class="text-uppercase font-weight-bold">
-                      <strong>E-commerce</strong>
+                      <strong>GEEK ZONE</strong>
                   </h6>
                   <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                  <p>Un ecommerce pensado para los aficionados a la tecnología, los coleccionistas y para los fanáticos de la ciencia ficción, Star Wars, Transformers, The Simpsons y los Funkos.</p>
               </div>
               <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
                   <h6 class="text-uppercase font-weight-bold">
@@ -155,47 +147,36 @@
                   </h6>
                   <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                   <p>
-                      <a href="#!">Star wars</a>
+                      <a class="link-footer" href="#!">Star wars</a>
                   </p>
                   <p>
-                      <a href="#!">Transformers</a>
+                      <a class="link-footer"  href="#!">Transformers</a>
                   </p>
                   <p>
-                      <a href="#!">Simpsons</a>
+                      <a class="link-footer" href="#!">Simpsons</a>
                   </p>
               </div>
-              <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                  <h6 class="text-uppercase font-weight-bold">
-                      <strong>Useful links</strong>
-                  </h6>
-                  <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-                  <p>
-                      <a href="#!">Categorías</a>
-                  </p>
-                  <p>
-                      <a href="#!">Preguntas frecuentes</a>
-                  </p>
-                  <p>
-                      <a href="#!">Contacto</a>
-                  </p>
+              <div class="col-md-4 col-lg-3 col-xl-3">
+                <form>
+                  <div class="form-group">
+                   <label for="exampleInputEmail1">Newsletter</label>
+                   <input type="email" class="form-control form-newsletter" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingresá tu email">
+                  </div>
+                  <button type="submit" class="btn btn-primary">ENVIAR</button>
+                </form>
               </div>
-              <!--/.Third column-->
-
-              <!--Fourth column-->
               <div class="col-md-4 col-lg-3 col-xl-3">
                   <h6 class="text-uppercase font-weight-bold">
                       <strong>Contacto</strong>
                   </h6>
                   <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                   <p>
-                      <i class="fa fa-home mr-3"></i> Dirección 1234</p>
+                    <a class="link-footer" href="https://www.google.com.ar/maps/place/Lima+1111,+C1073AAW+CABA/@-34.6210713,-58.383862,17z/data=!3m1!4b1!4m5!3m4!1s0x95bccb28ea8781cb:0x950feb519009506e!8m2!3d-34.6210713!4d-58.3816733" target="_blank">  <i class="fa fa-home mr-3"></i> Calle Falsa 123</a></p>
                   <p>
-                      <i class="fa fa-envelope mr-3"></i> info@ejemplo.com</p>
+                    <a class="link-footer" href="mailto:info@geekzon.com?subjetc=Consula%productos" target="_blank">  <i class="fa fa-envelope mr-3"></i>info@geekzon.com</a></p>
                   <p>
-                      <i class="fa fa-phone mr-3"></i>1234 5678</p>
+                    <a class="link-footer" href="tel:5553226" target="_blank">  <i class="fa fa-phone mr-3"></i>555-3226</a></p>
               </div>
-              <!--/.Fourth column-->
-
           </div>
       </div>
       <!--/.Footer Links-->
@@ -203,18 +184,14 @@
       <!-- Copyright-->
       <div class="footer-copyright py-3 text-center">
           Diseñado y programado por:
-          <a href="#">
+          <a class="link-footer" href="#">
               <strong> Pau, Gise y Nico</strong>
           </a>
       </div>
       <!--/.Copyright -->
 
-  </footer>
-  <!--/.Footer-->
 
-
-</footer>
-<!--/.Footer-->
+    </footer>
 
     <script src="js/jquery-3.3.1.min.js"></script>
     <!-- Bootstrap-JS -->

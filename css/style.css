@@ -1,3 +1,26 @@
+* {
+	box-sizing: border-box;
+}
+ul, ol {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+img {
+	width: 100%;
+}
+a {
+	display: inline-block;
+	text-decoration: none;
+  color: #2E4053;
+}
+body{
+  font-size: 1em;
+font-family: 'Exo 2', sans-serif;
+}
+.body-forms{
+	background-image: url(../images/star-wars-bg.jpg);
+}
 .encabezado{
   margin-top: 30px;
 }
@@ -6,9 +29,147 @@
 }
 footer{
   background-color: #cecece;
-  margin-top: 0px;
+  padding-top: 10px;
 }
-
 .card-title{
   font-size: 20px;
+}
+
+.titulo{
+  font-size: 2em;
+  padding-bottom: 5%;
+	padding-top: 5%;
+}
+/* FORM LOGIN Y REGISTRO*/
+
+.form-control{
+  border-radius: 5px;
+  border: solid 1px #99A3A4;
+  font-size: 1em;
+  box-shadow: 0 8px 23px 0px rgba(0, 0, 0, 0.1);
+	margin: 0 auto;
+}
+.form-group-input{
+  color: #2E4053;
+  font-weight: bold;
+  line-height: 1.5;
+	padding: 10px;
+}
+.form-group{
+  margin: 0 auto;
+	width: 100%;
+}
+
+.btn{
+	color: #ffff;
+	background-color: #148F77;
+}
+/* ICONS LOGIN FCBK Y GOOGLE*/
+ .titulo-icons{
+  width: 100%;
+  display: block;
+  line-height: 1.2;
+  text-align: center;
+  font-size: 1em;
+  padding-bottom: 20px;
+}
+.btn-fcbk{
+    color: #fff;
+    background-color: #3b5998;
+}
+.btn-fcbk i{
+  font-size: 30px;
+  margin-right: 5px;
+  padding-bottom: 3px;
+}
+.btn-fcbk, .btn-google{
+  font-size: 18px;
+  line-height: 1.2;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 18px;
+  height: 50px;
+  border-radius: 50px;
+  box-shadow: 0 8px 23px 0px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+	width: 100px;
+}
+
+.card-header{
+	background-color: #603260;
+}
+
+.card-header h5 a{
+	color: white;
+	text-decoration: none;
+}
+
+.card{
+	width: 100% !important;
+		margin-bottom: 20px;
+}
+.titulo-principal{
+	text-decoration: none;
+}
+
+.buscar{
+	background-color: #603260;
+	border: none;
+}
+
+.buscar:hover{
+	background-color: #797979;
+	border: none;
+}
+
+.acordeones{
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+.nav-item{
+	font-weight: 600;
+}
+
+.bg-light{
+	background-color:
+}
+
+.form-control {
+	width: 75%;
+}
+
+.carousel-control-prev-icon{
+	color: #603260;
+}
+
+.carousel-caption h5{
+	font-size: 3.55rem;
+	text-shadow: 2px 5px #603260;
+}
+
+.form-newsletter{
+	width: 100%;
+}
+
+.btn-primary{
+	margin: 15px;
+}
+
+.btn-primary{
+	background-color: #603260;
+	border: none;
+	margin-left: 0;
+}
+
+.btn-primary:hover{
+	background-color: #797979;
+	border: none;
+}
+
+.link-footer{
+	text-decoration: none !important;
 }
