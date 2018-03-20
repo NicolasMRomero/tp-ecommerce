@@ -20,6 +20,10 @@ font-family: 'Exo 2', sans-serif;
 }
 .body-forms{
 	background-image: url(../images/star-wars-bg.jpg);
+  font-family: 'Lato', sans-serif;
+}
+.body-forms{
+	background-image: url(../images/login/star-wars-bg.jpg);
 }
 .encabezado{
   margin-top: 30px;
@@ -35,6 +39,11 @@ footer{
   font-size: 20px;
 }
 
+.container{
+	margin-top: 20%;
+	margin-bottom: 20%;
+	border-radius: 15px;
+}
 .titulo{
   font-size: 2em;
   padding-bottom: 5%;
@@ -172,4 +181,8 @@ footer{
 
 .link-footer{
 	text-decoration: none !important;
+}
+
+.logo-menu{
+	width: 70px;
 }
