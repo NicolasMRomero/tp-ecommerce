@@ -16,10 +16,19 @@ a {
 }
 body{
   font-size: 1em;
-  font-family: 'Lato', sans-serif;
+font-family: 'Exo 2', sans-serif;
+}
+
+.titulo-principal{
+	text-align: center;
+	text-decoration: underline;
+	padding: 30px;
+}
+.container-accordion {
+	padding-bottom: 20px;
 }
 .body-forms{
-	background-image: url(../images/login/star-wars-bg.jpg);
+	background-image:url(../images/star-wars-bg.jpg);
 }
 .encabezado{
   margin-top: 30px;
@@ -29,14 +38,15 @@ body{
 }
 footer{
   background-color: #cecece;
-  margin-top: 0px;
+  padding-top: 10px;
 }
 .card-title{
   font-size: 20px;
 }
+
 .container{
-	margin-top: 20%;
-	margin-bottom: 20%;
+	margin-top: 5%;
+	margin-bottom: 5%;
 	border-radius: 15px;
 }
 .titulo{
@@ -58,16 +68,17 @@ footer{
   font-weight: bold;
   line-height: 1.5;
 	padding: 10px;
+	padding-left: 15%;
 }
 .form-group{
   margin: 0 auto;
 	width: 100%;
 }
-
-.btn{
-	color: #ffff;
-	background-color: #148F77;
+.form-text{
+	padding-left: 15%;
 }
+
+
 /* ICONS LOGIN FCBK Y GOOGLE*/
  .titulo-icons{
   width: 100%;
@@ -96,4 +107,97 @@ footer{
   height: 50px;
   border-radius: 50px;
   box-shadow: 0 8px 23px 0px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+	width: 100px;
+}
+
+.card-header{
+	background-color: #603260;
+}
+
+.card-header h5 a{
+	color: white;
+	text-decoration: none;
+}
+
+.card{
+	width: 100% !important;
+		margin-bottom: 20px;
+}
+.titulo-principal{
+	text-decoration: none;
+}
+
+.buscar, .btn{
+	background-color: #603260;
+	border: none;
+}
+.btn{
+	color: #ffff;
+}
+
+.buscar:hover, .btn:hover{
+	background-color: #797979;
+	border: none;
+}
+
+.acordeones{
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+.nav-item{
+	font-weight: 600;
+}
+
+.bg-light{
+	background-color:
+}
+
+.form-control {
+	width: 75%;
+}
+
+.carousel-control-prev-icon{
+	color: #603260;
+}
+
+.carousel-caption h5{
+	font-size: 3.55rem;
+	text-shadow: 2px 5px #603260;
+}
+
+.form-newsletter{
+	width: 50%;
+}
+
+.btn-primary{
+	margin: 15px;
+}
+
+.btn-primary{
+	background-color: #603260;
+	border: none;
+	margin-left: 0;
+}
+
+.btn-primary:hover{
+	background-color: #797979;
+	border: none;
+}
+
+.link-footer{
+	text-decoration: none !important;
+}
+
+.logo-menu{
+	width: 70px;
+}
+
+@media (max-width:500px) {
+	.productos{
+		display: none;
+	}
 }
