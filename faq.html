@@ -15,26 +15,14 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/fontawesome.css" integrity="sha384-q3jl8XQu1OpdLgGFvNRnPdj5VIlCvgsDQTQB6owSOHWlAurxul7f+JpUOVdAiJ5P" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
 
-    <!-- My-Styles -->
-  	<style>
 
-      .container-accordion {
-        padding-bottom: 20px;
-      }
-
-      h1 {
-        text-align: center;
-        text-decoration: underline;
-        padding: 30px;
-      }
-  	</style>
 
   </head>
   <body>
     <!-- Hearder -->
     <header>
       <nav class="navbar navbar-expand-lg navbar-light bg-light ">
-        <a class="navbar-brand" href="index.html"><img src="images/logo-E.png" alt="logo-E"></a>
+        <a class="navbar-brand logo-menu" href="index.html"><img src="images/logo-E.png" alt="logo-E"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -50,6 +38,10 @@
                 <a class="dropdown-item" href="#">Transformers</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#">Los Simpsons</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Funko</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Tienda Geek</a>
               </div>
             </li>
             <li class="nav-item">
@@ -72,6 +64,7 @@
         </div>
       </nav>
     </header>
+    <!--/header-->
 
       <div class "container productos-ppal">
       <img class= "banner-faq" src="images/banner-funkos.jpg" alt="faq">
@@ -84,13 +77,13 @@
                 <div class="card-header" role="tab" id="headingOne">
                   <h5 class="mb-0">
                     <a data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                      ¿Como hago para comprar?
+                      ¿Cómo hago para comprar?
                     </a>
                   </h5>
                 </div>
                 <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
                   <div class="card-body">
-                    Para empezar a comprar primero se tiene que registrar completando un sencillo formulario el cual se encuentra en.... Una vez registrado busca el artículo y con hacer click en el boton "Comprar" y siguiendo los pasos ya realiza la compra.
+                    Para empezar a comprar primero se tiene que registrar completando un sencillo formulario en la pestaña "Registrarse". Una vez registrado busca el artículo y con hacer click en el botón "Comprar" y siguiendo los pasos ya realiza la compra.
                   </div>
                 </div>
               </div>
@@ -104,7 +97,7 @@
                 </div>
                 <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
                   <div class="card-body">
-                    Si olvidó su contraseña hacer click en el botón "¡Olvidé mi contraseña!" e ingresar el mail con el cual se registró y en el mismo recibirá un correo para recuperarla.
+                    Si olvidó su contraseña hacer clic en el botón "¡Olvidé mi contraseña!" e ingresar el mail con el cual se registró y en el mismo recibirá un correo para recuperarla.
                   </div>
                 </div>
               </div>
@@ -186,7 +179,7 @@
                 <div class="card-header" role="tab" id="headingEight">
                   <h5 class="mb-0">
                     <a class="collapsed" data-toggle="collapse" href="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
-                      ¿Como consigo mi factura de compra?
+                      ¿Cómo consigo mi factura de compra?
                     </a>
                   </h5>
                 </div>
@@ -209,74 +202,84 @@
 
   </div>
 
-<!--Footer-->
-<footer>
+      <!--Footer-->
+      <footer>
 
-  <!--Footer Links-->
-  <div class="container mt-5 mb-4 text-center text-md-left">
-      <div class="row mt-3">
-          <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
-              <h6 class="text-uppercase font-weight-bold">
-                  <strong>GEEK ZONE</strong>
-              </h6>
-              <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-              <p>Un ecommerce pensado para los aficionados a la tecnología, los coleccionistas y para los fanáticos de la ciencia ficción, Star Wars, Transformers, The Simpsons y los Funkos.</p>
-          </div>
-          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-              <h6 class="text-uppercase font-weight-bold">
-                  <strong>Productos</strong>
-              </h6>
-              <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-              <p>
-                  <a class="link-footer" href="#!">Star wars</a>
-              </p>
-              <p>
-                  <a class="link-footer"  href="#!">Transformers</a>
-              </p>
-              <p>
-                  <a class="link-footer" href="#!">Simpsons</a>
-              </p>
-          </div>
-          <div class="col-md-4 col-lg-3 col-xl-3">
-            <form>
-              <div class="form-group">
-               <label for="exampleInputEmail1">Newsletter</label>
-               <input type="email" class="form-control form-newsletter" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingresá tu email">
-              </div>
-              <button type="submit" class="btn btn-primary">ENVIAR</button>
-            </form>
-          </div>
-          <div class="col-md-4 col-lg-3 col-xl-3">
-              <h6 class="text-uppercase font-weight-bold">
-                  <strong>Contacto</strong>
-              </h6>
-              <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-              <p>
-                <a class="link-footer" href="https://www.google.com.ar/maps/place/Lima+1111,+C1073AAW+CABA/@-34.6210713,-58.383862,17z/data=!3m1!4b1!4m5!3m4!1s0x95bccb28ea8781cb:0x950feb519009506e!8m2!3d-34.6210713!4d-58.3816733" target="_blank">  <i class="fa fa-home mr-3"></i> Calle Falsa 123</a></p>
-              <p>
-                <a class="link-footer" href="mailto:info@geekzon.com?subjetc=Consula%productos" target="_blank">  <i class="fa fa-envelope mr-3"></i>info@geekzon.com</a></p>
-              <p>
-                <a class="link-footer" href="tel:5553226" target="_blank">  <i class="fa fa-phone mr-3"></i>555-3226</a></p>
-          </div>
-      </div>
-  </div>
-  <!--/.Footer Links-->
+        <!--Footer Links-->
+        <div class="container mt-5 mb-4 text-center text-md-left">
+            <div class="row mt-3">
+                <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
+                    <h6 class="text-uppercase font-weight-bold">
+                        <strong>GEEK ZONE</strong>
+                    </h6>
+                    <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>Pensado para los aficionados a la tecnología, los coleccionistas y los fanáticos de la ciencia ficción, Star Wars, Transformers, The Simpsons y los Funkos.</p>
+                </div>
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <h6 class="text-uppercase font-weight-bold">
+                        <strong>Productos</strong>
+                    </h6>
+                    <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>
+                        <a class="link-footer" href="#!">Star Wars</a>
+                    </p>
+                    <p>
+                        <a class="link-footer"  href="#!">Transformers</a>
+                    </p>
+                    <p>
+                        <a class="link-footer" href="#!">The Simpsons</a>
+                    </p>
+                    <p>
+                        <a class="link-footer" href="#!">Funko</a>
+                    </p>
+                    <p>
+                        <a class="link-footer" href="#!">Tienda Geek</a>
+                    </p>
+                </div>
 
-  <!-- Copyright-->
-  <div class="footer-copyright py-3 text-center">
-      Diseñado y programado por:
-      <a class="link-footer" href="#">
-          <strong> Pau, Gise y Nico</strong>
-      </a>
-  </div>
-  <!--/.Copyright -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mb-4">
+                    <h6 class="text-uppercase font-weight-bold">
+                        <strong>Contacto</strong>
+                    </h6>
+                    <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>
+                      <a class="link-footer" href="https://www.google.com.ar/maps/place/Lima+1111,+C1073AAW+CABA/@-34.6210713,-58.383862,17z/data=!3m1!4b1!4m5!3m4!1s0x95bccb28ea8781cb:0x950feb519009506e!8m2!3d-34.6210713!4d-58.3816733" target="_blank">  <i class="fa fa-home mr-3"></i> Calle Falsa 123</a></p>
+                    <p>
+                      <a class="link-footer" href="mailto:info@geekzon.com?subjetc=Consula%productos" target="_blank">  <i class="fa fa-envelope mr-3"></i>info@geekzon.com</a></p>
+                    <p>
+                      <a class="link-footer" href="tel:5553226" target="_blank">  <i class="fa fa-phone mr-3"></i>555-3226</a></p>
+                </div>
+                <div class="col-12 text-center mb-4">
+                  <form>
+                    <div class="form-group">
+                     <label for="exampleInputEmail1">
+                       <h6 class="text-uppercase font-weight-bold">
+                           <strong>Newsletter</strong>
+                       </h6></label>
+                     <input type="email" class="form-control form-newsletter" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingresá tu email">
+                    </div>
+                    <button type="submit" class="btn btn-primary">ENVIAR</button>
+                  </form>
+                </div>
+            </div>
+        </div>
+        <!--/.Footer Links-->
+
+        <!-- Copyright-->
+        <div class="footer-copyright py-3 text-center">
+            Diseñado y programado por:
+            <a class="link-footer" href="#">
+                <strong> Pau, Gise y Nico</strong>
+            </a>
+        </div>
+        <!--/.Copyright -->
 
 
-</footer>
-<!--/.Footer-->
+      </footer>
+      <!--/.Footer-->
 
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+          <script src="js/jquery-3.3.1.min.js"></script>
+          <script src="js/bootstrap.min.js"></script>
 
-  </body>
-</html>
+        </body>
+      </html>

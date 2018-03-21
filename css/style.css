@@ -18,12 +18,17 @@ body{
   font-size: 1em;
 font-family: 'Exo 2', sans-serif;
 }
-.body-forms{
-	background-image: url(../images/star-wars-bg.jpg);
-  font-family: 'Lato', sans-serif;
+
+.titulo-principal{
+	text-align: center;
+	text-decoration: underline;
+	padding: 30px;
+}
+.container-accordion {
+	padding-bottom: 20px;
 }
 .body-forms{
-	background-image: url(../images/login/star-wars-bg.jpg);
+	background-image:url(../images/star-wars-bg.jpg);
 }
 .encabezado{
   margin-top: 30px;
@@ -40,8 +45,8 @@ footer{
 }
 
 .container{
-	margin-top: 20%;
-	margin-bottom: 20%;
+	margin-top: 5%;
+	margin-bottom: 5%;
 	border-radius: 15px;
 }
 .titulo{
@@ -63,16 +68,17 @@ footer{
   font-weight: bold;
   line-height: 1.5;
 	padding: 10px;
+	padding-left: 15%;
 }
 .form-group{
   margin: 0 auto;
 	width: 100%;
 }
-
-.btn{
-	color: #ffff;
-	background-color: #148F77;
+.form-text{
+	padding-left: 15%;
 }
+
+
 /* ICONS LOGIN FCBK Y GOOGLE*/
  .titulo-icons{
   width: 100%;
@@ -124,12 +130,15 @@ footer{
 	text-decoration: none;
 }
 
-.buscar{
+.buscar, .btn{
 	background-color: #603260;
 	border: none;
 }
+.btn{
+	color: #ffff;
+}
 
-.buscar:hover{
+.buscar:hover, .btn:hover{
 	background-color: #797979;
 	border: none;
 }
@@ -161,7 +170,7 @@ footer{
 }
 
 .form-newsletter{
-	width: 100%;
+	width: 50%;
 }
 
 .btn-primary{
@@ -185,4 +194,10 @@ footer{
 
 .logo-menu{
 	width: 70px;
+}
+
+@media (max-width:500px) {
+	.productos{
+		display: none;
+	}
 }
