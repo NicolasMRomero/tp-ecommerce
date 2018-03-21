@@ -201,3 +201,15 @@ footer{
 		display: none;
 	}
 }
+
+@media (min-width:980px) {
+	video{
+		margin-top: 5%;
+	}
+}
+@media (min-width:981px) {
+	video{
+		margin-top: 6%;
+		margin-bottom: 6%;
+	}
+}
