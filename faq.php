@@ -1,4 +1,10 @@
-<?php include_once 'header.php'; ?>
+<?php
+include_once 'header.php';
+
+
+
+?>
+
 
 <div class "container productos-ppal">
 <img class= "banner-faq" src="images/banner-funkos.jpg" alt="faq">
