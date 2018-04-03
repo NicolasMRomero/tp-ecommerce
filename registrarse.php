@@ -34,14 +34,8 @@ if ($_POST) {
 
     if (empty($errores)) {
     // if (count($errores) == 0) {
-        $usuario = crearUsuario($_POST);
-        $userEnJSON = json_encode($usuario);
-
-        var_dump($userEnJSON);
-
-        file_put_contents('usuarios.json', $userEnJSON . PHP_EOL, FILE_APPEND);
-        header('Location: index.php');
-			     exit;
+        $usuario = guardarUsuario($_POST, 'avatar');
+        loguear($usuario);
     }
   }
 

@@ -130,21 +130,28 @@ function guardarImagen($avatar){
 }
 
 
-
-
-
 // acá abajo las funciones que faltan hacer.
 // Hay que meter $_SESSION, setear las cookies, hacer que desloguee y veamos qué de los optativos hacemos.
 
-/*
-function guardarUsuario($data, $avatar){}
 
-function validarLogin($data) {}
+function guardarUsuario($data, $avatar){
+  $usuario = crearUsuario($data, $avatar);
+  $userEnJSON = json_encode($usuario);
 
-function loguear($usuario) {}
+  file_put_contents('usuarios.json', $userEnJSON . PHP_EOL, FILE_APPEND);
+  return $usuario;
+}
 
-function estaLogueado() {}
+//function validarLogin($data) {}
 
-function traerPorId($id){}    */
+function loguear($usuario) {
+   $_SESSION['id'] = $usuario['id'];
+  header('location: index.php');
+  exit;
+}
+
+//function estaLogueado() {}
+
+//function traerPorId($id){}
 
  ?>
