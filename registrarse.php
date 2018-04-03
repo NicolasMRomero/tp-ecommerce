@@ -29,6 +29,10 @@ if ($_POST) {
     $errores = validar($_POST, 'avatar');
 
     if (empty($errores)) {
+
+    			$errores = guardarImagen('avatar');
+
+    if (empty($errores)) {
     // if (count($errores) == 0) {
         $usuario = crearUsuario($_POST);
         $userEnJSON = json_encode($usuario);
@@ -39,9 +43,10 @@ if ($_POST) {
         header('Location: index.php');
 			     exit;
     }
+  }
 
 //acá vamos a tener que llamar a la funcion guardar usuario, porque hasta ahora solo se hace con crear. pero enrealidad lo que debemos meter en el json es lo que guardemos.
-//puse que el header location sea el home, pero podemos derivarlo a una pagina de felicitaciones o a donde quieran.. 
+//puse que el header location sea el home, pero podemos derivarlo a una pagina de felicitaciones o a donde quieran..
 }
 
  ?>
