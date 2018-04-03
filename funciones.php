@@ -10,8 +10,8 @@ function crearUsuario($data, $avatar){
         'address' => $data['address'],
         'city' => $data['city'],
         'provincia' => $data['provincia'],
-        'avatar' => 'images/' .'usuarios/'. $data['email'] . '.' . pathinfo($_FILES[$avatar]['name'], PATHINFO_EXTENSION),
-        'id'=> traerUltimoID(),
+        'imagen' => 'images/' .'usuarios/'. $data['email'] . '.' . pathinfo($_FILES[$avatar]['name'], PATHINFO_EXTENSION),
+        'id'=> traerUltimoID()
     ];
     return $usuario;
 }
@@ -29,7 +29,6 @@ function validar($data, $avatar){
       $provincia = trim($_POST['provincia']);
       $pass = trim($_POST['pass']);
       $rpass = trim($_POST['rpass']);
-      $avatar = $_FILES['avatar']['error'];
 
         if ($name == "") {
           $errores['name'] = "Completá tu nombre.";
@@ -63,7 +62,7 @@ function validar($data, $avatar){
           } elseif ($pass != $rpass) {
             $errores['pass'] = "Tus contraseñas no coinciden.";
         }
-       if ($avatar != UPLOAD_ERR_OK){
+       if ($_FILES[$avatar]['error']!= UPLOAD_ERR_OK){
          $errores['avatar'] = "Por favor subí una foto de perfil.";
        } else {
          $ext = strtolower(pathinfo($_FILES[$avatar]['name'], PATHINFO_EXTENSION));
@@ -125,7 +124,7 @@ function guardarImagen($avatar){
           $errores['avatar'] = "El formato no es válido. Subí archivos JPG, JPEG y PNG";
       }
     } else {
-      $errores['imagen'] = "Subí una imagen."
+      $errores['avatar'] = "Subí una imagen.";
     }
     return $errores;
 }
