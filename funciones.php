@@ -1,5 +1,4 @@
 <?php
-
 function crearUsuario($data, $avatar){
     $usuario = [
         'name' => $data['name'],
@@ -17,7 +16,6 @@ function crearUsuario($data, $avatar){
 }
 //todo esto es lo que vemos como key y value en el json del archivo usuarios.json
 //las imagenes se almacenan en la carpeta images/usuarios
-
 function validar($data, $avatar){
       $errores = [];
       $name = trim($_POST['name']);
@@ -29,7 +27,6 @@ function validar($data, $avatar){
       $provincia = trim($_POST['provincia']);
       $pass = trim($_POST['pass']);
       $rpass = trim($_POST['rpass']);
-
         if ($name == "") {
           $errores['name'] = "Completá tu nombre.";
           }
@@ -73,7 +70,6 @@ function validar($data, $avatar){
       return $errores;
   }
   //son cada uno de los errores de los inputs. Espacios vacios, mail invalido, imagen con formato inocorrecto, pass que no coinciden o tienen menos de 8 caracteres.
-
 function traerTodos(){
       $todosJSON = file_get_contents('usuarios.json');
           //esto es un string//
@@ -87,7 +83,6 @@ function traerTodos(){
           }
       return $todosPHP;
   }
-
 function traerUltimoID(){
       $todos = traerTodos();
         if (count($todos) == 0){
@@ -98,7 +93,6 @@ function traerUltimoID(){
   return $ultimoID + 1;
 }
 //acá lo que hice fue tomar el ultimo id que tiene el json y sumarle uno para que cada usuario que se cree se le asigne un id un numero mayor al anterior.
-
 function existeMail($mail){
     $todos = traerTodos();
     foreach ($todos as $unUsuario) {
@@ -107,15 +101,12 @@ function existeMail($mail){
       }
     } return false;
 }
-
-
 function guardarImagen($avatar){
   $errores =[];
   if ($_FILES[$avatar]['error'] == UPLOAD_ERR_OK){
     $nombreArchivo = $_FILES[$avatar]['name'];
     $ext = pathinfo($nombreArchivo, PATHINFO_EXTENSION);
     $archivoTemp = $_FILES[$avatar]['tmp_name'];
-
   if ($ext == 'jpg' || $ext == 'jpeg' || $ext == 'png' ||$ext == 'JPG' || $ext == 'JPEG' || $ext == 'PNG') {
     $ubicacion = dirname(__file__);
     $ubicacionFisica = $ubicacion . '/images/' .'/usuarios/' . $_POST['email'] . '.' . $ext;
@@ -128,30 +119,20 @@ function guardarImagen($avatar){
     }
     return $errores;
 }
-
-
 // acá abajo las funciones que faltan hacer.
 // Hay que meter $_SESSION, setear las cookies, hacer que desloguee y veamos qué de los optativos hacemos.
-
-
 function guardarUsuario($data, $avatar){
   $usuario = crearUsuario($data, $avatar);
   $userEnJSON = json_encode($usuario);
-
   file_put_contents('usuarios.json', $userEnJSON . PHP_EOL, FILE_APPEND);
   return $usuario;
 }
-
 //function validarLogin($data) {}
-
 function loguear($usuario) {
    $_SESSION['id'] = $usuario['id'];
   header('location: index.php');
   exit;
 }
-
 //function estaLogueado() {}
-
 //function traerPorId($id){}
-
  ?>

@@ -1,11 +1,8 @@
 <?php include_once 'header.php';
 require_once('funciones.php');
-
 //no toqué nada de logueo... hay que hacer las funciones y la persistencia, la validación...
 // si quieren para no meternos en bardos al pedo saquemos el login con google y facebook.
-//si lo hacemos hay que borrar en el css todas las class que armé para esos botones. 
-
-
+//si lo hacemos hay que borrar en el css todas las class que armé para esos botones.
 ?>
 
 <form method="post">
