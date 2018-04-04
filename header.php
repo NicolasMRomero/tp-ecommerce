@@ -21,7 +21,7 @@
     <!-- Hearder -->
     <header>
       <nav class="navbar navbar-expand-lg navbar-light bg-light ">
-        <a class="navbar-brand logo-menu" href="index.html"><img src="images/logo-E.png" alt="logo-E"></a>
+        <a class="navbar-brand logo-menu" href="index.php"><img src="images/logo-E.png" alt="logo-E"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -44,16 +44,16 @@
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="faq.html">FAQ</a>
+              <a class="nav-link" href="faq.php">FAQ</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="">Contacto</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="ingresar.html">Ingresar</a>
+              <a class="nav-link" href="ingresar.php">Ingresar</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="registrarse.html">Registrarse</a>
+              <a class="nav-link" href="registrarse.php">Registrarse</a>
             </li>
           </ul>
           <form class="form-inline my-2 my-lg-0">
