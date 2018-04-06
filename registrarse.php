@@ -10,7 +10,6 @@ $city = "";
 $pass = "";
 $rpass = "";
 $provincia = "";
-//$avatar = "";
 $errores = [];
 
 if ($_POST) {
@@ -23,7 +22,6 @@ if ($_POST) {
     $provincia = trim($_POST['provincia']);
     $pass = trim($_POST['pass']);
     $rpass = trim($_POST['rpass']);
-  //  $avatar = $_FILES['avatar']['error'];
 
 //devuelve un array que se almacena en errores//
     $errores = validar($_POST, 'avatar');

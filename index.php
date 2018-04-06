@@ -1,7 +1,7 @@
 <?php include_once 'header.php'; ?>
 
-    <section>
-      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <section class="slider">
+      <div id="carouselExampleControls" class="carousel-slide" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img class="d-block w-100" src="images/slider/slider_star_wars.jpg" alt="First slide">
@@ -40,7 +40,7 @@
           </div>
         </div>
         <div class="row productos">
-          <div class="col-12 col-md-6 col-lg-4">
+          <div class="col-12 col-md-4 col-lg-4">
             <div class="card" style="width: 18rem;">
               <img class="card-img-top" src="images/productos/kylo.jpg" alt="Kylo Ren">
               <div class="card-body">
@@ -50,7 +50,7 @@
               </div>
             </div>
           </div>
-          <div class="col-12 col-md-6 col-lg-4">
+          <div class="col-12 col-md-4 col-lg-4">
             <div class="card" style="width: 18rem;">
               <img class="card-img-top" src="images/productos/optimus-prime.jpg" alt="Optimus Prime">
               <div class="card-body">
@@ -60,7 +60,7 @@
               </div>
             </div>
           </div>
-          <div class="col-12 col-md-6 col-lg-4">
+          <div class="col-12 col-md-4 col-lg-4">
             <div class="card" style="width: 18rem;">
               <img class="card-img-top" src="images/productos/krusty.jpg" alt="Payaso Krusty">
               <div class="card-body">
@@ -142,4 +142,21 @@
 
     </div>
 </section>
+<!--newsletter-->
+<div class="container-newsletter">
+  <div class="row">
+<div class="col-12 text-center">
+  <form>
+    <div class="form-group">
+     <label for="exampleInputEmail1">
+       <h6 class="font-weight-bold">
+           <strong>Suscribite a nuestro newsletter</strong>
+       </h6></label>
+     <input type="email" class="form-control form-newsletter" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingresá tu email">
+      <button type="submit" class="btn btn-primary">ENVIAR</button>
+    </div>
+  </form>
+</div>
+</div>
+</div>
 <?php include_once 'footer.php'; ?>

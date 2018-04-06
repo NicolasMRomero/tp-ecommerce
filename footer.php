@@ -1,8 +1,6 @@
 
 <!--Footer-->
 <footer>
-
-  <!--Footer Links-->
   <div class="container mt-5 mb-4 text-center text-md-left">
       <div class="row mt-3">
           <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
@@ -42,38 +40,27 @@
               <p>
                 <a class="link-footer" href="https://www.google.com.ar/maps/place/Lima+1111,+C1073AAW+CABA/@-34.6210713,-58.383862,17z/data=!3m1!4b1!4m5!3m4!1s0x95bccb28ea8781cb:0x950feb519009506e!8m2!3d-34.6210713!4d-58.3816733" target="_blank">  <i class="fa fa-home mr-3"></i> Calle Falsa 123</a></p>
               <p>
-                <a class="link-footer" href="mailto:info@geekzon.com?subjetc=Consula%productos" target="_blank">  <i class="fa fa-envelope mr-3"></i>info@geekzon.com</a></p>
+                <a class="link-footer" href="mailto:info@geekzon.com?subjetc=Consula%productos" target="_blank">  <i class="fa fa-envelope mr-3"></i>info@geekzone.com</a></p>
               <p>
-                <a class="link-footer" href="tel:5553226" target="_blank">  <i class="fa fa-phone mr-3"></i>555-3226</a></p>
+                <a class="link-footer" href="tel:5553226" target="_blank">  <i class="fa fa-phone mr-3"></i>5555-3226</a></p>
           </div>
-          <div class="col-12 text-center mb-4">
-            <form>
-              <div class="form-group">
-               <label for="exampleInputEmail1">
-                 <h6 class="text-uppercase font-weight-bold">
-                     <strong>Newsletter</strong>
-                 </h6></label>
-               <input type="email" class="form-control form-newsletter" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingresá tu email">
-              </div>
-              <button type="submit" class="btn btn-primary">ENVIAR</button>
-            </form>
-          </div>
-      </div>
-  </div>
-  <!--/.Footer Links-->
+        </div>
+        </div>
+</footer>
+<!--/.Footer-->
 
   <!-- Copyright-->
-  <div class="footer-copyright py-3 text-center">
+  <div class="container-copyright">
+    <div class="row">
+        <div class="col-12 footer-copyright pb-2 text-center">
       Diseñado y programado por:
       <a class="link-footer" href="#">
           <strong> Pau, Gise y Nico</strong>
       </a>
+        </div>
+      </div>
   </div>
   <!--/.Copyright -->
-
-
-</footer>
-<!--/.Footer-->
 
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
