@@ -40,6 +40,7 @@ footer{
   background-color: #cecece;
   padding-top: 10px;
 }
+
 .card-title{
   font-size: 20px;
 }
@@ -62,6 +63,7 @@ footer{
   font-size: 1em;
   box-shadow: 0 8px 23px 0px rgba(0, 0, 0, 0.1);
 	margin: 0 auto;
+	width: 75%;
 }
 .form-group-input{
   color: #2E4053;
@@ -152,14 +154,6 @@ footer{
 	font-weight: 600;
 }
 
-.bg-light{
-	background-color:
-}
-
-.form-control {
-	width: 75%;
-}
-
 .carousel-control-prev-icon{
 	color: #603260;
 }
@@ -174,13 +168,10 @@ footer{
 }
 
 .btn-primary{
-	margin: 15px;
-}
-
-.btn-primary{
 	background-color: #603260;
 	border: none;
 	margin-left: 0;
+	margin: 15px;
 }
 
 .btn-primary:hover{
@@ -199,6 +190,9 @@ footer{
 @media (max-width:500px) {
 	.productos{
 		display: none;
+	}
+ .slider{
+		display: none !important;
 	}
 }
 
