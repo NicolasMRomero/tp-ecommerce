@@ -130,10 +130,13 @@ function guardarUsuario($data, $avatar){
 //function validarLogin($data) {}
 function loguear($usuario) {
    $_SESSION['id'] = $usuario['id'];
-  header('location: index.php');
+  header('location: perfil.php');   //CAMBIE EL INDEX POR PERFIL/*
   exit;
 }
-//function estaLogueado() {}
+//function estaLogueado() {} LA AGREGUE YO (GISE)
+function estaLogueado() {
+		return isset($_SESSION['id']);
+	}
 //function traerPorId($id){}
 
 // == FUNCTION - traerId ==
