@@ -6,7 +6,6 @@ header('location: ingresar.php');
 exit;
   	}
 $usuario = traerPorId($_SESSION['id']);
-
    ?>
 
 <div class="container-perfil">

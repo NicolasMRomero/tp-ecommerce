@@ -152,11 +152,6 @@ function loguear($usuario) {
   header('location: perfil.php');
   exit;
 }
-//function estaLogueado() {} LA AGREGUE YO (GISE)
-function estaLogueado() {
-		return isset($_SESSION['id']);
-	}
-//function traerPorId($id){}
 
 function estaLogueado() {
 		return isset($_SESSION['id']);
@@ -178,7 +173,7 @@ function traerSuscriptos(){
       array_pop($suscriptosArray);
       $suscriptosPHP = [];
         foreach ($suscriptosArray as $unSuscripto) {
-            $suscriptosPHP[] =  json_decode($unSuscripto, true);
+            $suscriptosPHP[] = json_decode($unSuscripto, true);
           }
   return $suscriptosPHP;
   }

@@ -8,15 +8,12 @@ if (estaLogueado()){
 
 $email = "";
 $errores = [];
-
 if ($_POST){
   $email = trim($_POST['email']);
   $errores = validarLogin($_POST);
-
   if (empty($errores)){
     $usuario = existeMail($email);
     loguear($usuario);
-
     if (isset($_POST['recordarme'])){
       setcookie('id', $usuario['id'], time() + 3600 * 24 * 30);
     }
@@ -24,8 +21,6 @@ if ($_POST){
     exit;
   }
 }
-
-
 ?>
 <body class="body-forms">
 <form method="post" enctype="multipart/form-data">
