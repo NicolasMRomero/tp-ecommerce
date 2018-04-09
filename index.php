@@ -1,4 +1,24 @@
-<?php include_once 'header.php'; ?>
+<?php include_once 'header.php';
+require_once('funciones.php');
+
+if ($_POST){
+  $suscriptor = [
+    'email' => trim($_POST['email']),
+    'id' => traerUltIDSuscriptos()
+  ];
+    $suscriptorJSON = json_encode($suscriptor);
+  file_put_contents('suscriptos.json', $suscriptorJSON . PHP_EOL, FILE_APPEND);
+}
+
+$erroremail = '';
+if ($_POST){
+      if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
+        $erroremail = "Poné un email correcto";
+      } else{
+        $erroremail= "¡Listo! Quedamos en contacto 😉";
+      }
+}
+?>
 
     <section class="slider">
       <div id="carouselExampleControls" class="carousel-slide" data-ride="carousel">
@@ -79,7 +99,7 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <h1 class="text-center pb-4"> NUESTROS PRODUCTOS</h1>
+        <h1 class="text-center pb-4">PRODUCTOS</h1>
       </div>
     </div>
 
@@ -146,13 +166,15 @@
 <div class="container-newsletter">
   <div class="row">
 <div class="col-12 text-center">
-  <form>
+  <form method="post">
     <div class="form-group">
      <label for="exampleInputEmail1">
        <h6 class="font-weight-bold">
            <strong>Suscribite a nuestro newsletter</strong>
        </h6></label>
-     <input type="email" class="form-control form-newsletter" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingresá tu email">
+     <input type="email" class="form-control form-newsletter" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingresá tu email" name="email" value="<?=isset($_POST['email'])? $_POST['email'] : ''?>">
+        <span class="form-group-input" style="color: #603260; padding-right:15%;"> <?=$erroremail?> </span>
+        <br>
       <button type="submit" class="btn btn-primary">ENVIAR</button>
     </div>
   </form>

@@ -1,4 +1,8 @@
 <?php
+session_start();
+	if (isset($_COOKIE['id'])) {
+		$_SESSION['id'] = $_COOKIE['id'];
+	}
 
 function crearUsuario($data, $avatar){
     $usuario = [
@@ -15,8 +19,6 @@ function crearUsuario($data, $avatar){
     ];
     return $usuario;
 }
-//todo esto es lo que vemos como key y value en el json del archivo usuarios.json
-//las imagenes se almacenan en la carpeta images/usuarios
 
 function validar($data, $avatar){
       $errores = [];
@@ -29,7 +31,6 @@ function validar($data, $avatar){
       $provincia = trim($_POST['provincia']);
       $pass = trim($_POST['pass']);
       $rpass = trim($_POST['rpass']);
-
         if ($name == "") {
           $errores['name'] = "Completá tu nombre.";
           }
@@ -49,16 +50,16 @@ function validar($data, $avatar){
             $errores['provincia'] = "¿Cuál es tu provincia?";
             }
         if ($email == "") {
-          $errores['email'] = "Completá tu email";
+          $errores['email'] = "Completá tu mail.";
         }elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-          $errores['email'] = "Por favor poné un email correcto";
+          $errores['email'] = "Por favor poné un mail correcto.";
         } elseif (existeMail($email)){
-          $errores['email'] = "¡Ese mail ya existe!";
+          $errores['email'] = "¡Ese email ya existe!";
           }
         if ($pass == "" || $rpass == "") {
           $errores['pass'] = "Por favor completá tus contraseñas.";
-          }elseif (strlen($pass) < 8) {
-          $errores['pass'] = "La contraseña debe tener al menos 8 caracteres.";
+        }elseif (strlen($pass) < 7) {
+          $errores['pass'] = "La contraseña debe tener al menos 7 caracteres.";
           } elseif ($pass != $rpass) {
             $errores['pass'] = "Tus contraseñas no coinciden.";
         }
@@ -67,20 +68,16 @@ function validar($data, $avatar){
        } else {
          $ext = strtolower(pathinfo($_FILES[$avatar]['name'], PATHINFO_EXTENSION));
 			if ($ext != 'jpg' && $ext != 'png' && $ext != 'jpeg'){
-           $errores['avatar']= "El formato no es válido. Subí archivos JPG, JPEG y PNG";
+           $errores['avatar']= "El formato no es válido. Subí archivos jpg, jpeg o png.";
            }
          }
       return $errores;
   }
-  //son cada uno de los errores de los inputs. Espacios vacios, mail invalido, imagen con formato inocorrecto, pass que no coinciden o tienen menos de 8 caracteres.
 
 function traerTodos(){
       $todosJSON = file_get_contents('usuarios.json');
-          //esto es un string//
       $usuariosArray = explode(PHP_EOL, $todosJSON);
-        //esto es un array//
       array_pop($usuariosArray);
-        //para sacar el ultimo espacio vacio//
       $todosPHP = [];
         foreach ($usuariosArray as $unUsuario) {
             $todosPHP[] =  json_decode($unUsuario, true);
@@ -97,17 +94,15 @@ function traerUltimoID(){
   $ultimoID = $ultimoUsuario['id'];
   return $ultimoID + 1;
 }
-//acá lo que hice fue tomar el ultimo id que tiene el json y sumarle uno para que cada usuario que se cree se le asigne un id un numero mayor al anterior.
 
-function existeMail($mail){
+function existeMail($email){
     $todos = traerTodos();
     foreach ($todos as $unUsuario) {
-      if ($unUsuario['email']== $mail){
+      if ($unUsuario['email'] == $email){
         return $unUsuario;
       }
     } return false;
 }
-
 
 function guardarImagen($avatar){
   $errores =[];
@@ -129,29 +124,70 @@ function guardarImagen($avatar){
     return $errores;
 }
 
-
-// acá abajo las funciones que faltan hacer.
-// Hay que meter $_SESSION, setear las cookies, hacer que desloguee y veamos qué de los optativos hacemos.
-
-
 function guardarUsuario($data, $avatar){
   $usuario = crearUsuario($data, $avatar);
   $userEnJSON = json_encode($usuario);
-
   file_put_contents('usuarios.json', $userEnJSON . PHP_EOL, FILE_APPEND);
   return $usuario;
 }
 
-//function validarLogin($data) {}
+function validarLogin($data) {
+		$errores = [];
+		$email = trim($data['email']);
+		$pass = trim($data['pass']);
+		if ($email == '') {
+			$errores['email'] = "Ingresá tu mail.";
+		} elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+			$errores['email'] = "El mail ingresado es inocorrecto.";
+		} elseif (!$usuario = existeMail($email)) {
+			$errores['email'] = "Este mail no está registrado. ¡Unite!";
+		} else {
+      if (!password_verify($pass, $usuario['pass'])) {
+         	$errores['pass'] = "Alguno de los datos es incorrecto.";
+      	}
+      }
+		return $errores;
+	}
 
 function loguear($usuario) {
    $_SESSION['id'] = $usuario['id'];
-  header('location: index.php');
+  header('location: perfil.php');
   exit;
 }
 
-//function estaLogueado() {}
+function estaLogueado() {
+		return isset($_SESSION['id']);
+	}
 
-//function traerPorId($id){}
+  function traerPorId($id){
+    $usuariosTodos = traerTodos();
+    foreach ($usuariosTodos as $usuario) {
+      if ($id == $usuario['id']) {
+        return $usuario;
+      }
+    }
+    return false;
+  }
+
+function traerSuscriptos(){
+      $suscriptosJSON = file_get_contents('suscriptos.json');
+      $suscriptosArray = explode(PHP_EOL, $suscriptosJSON);
+      array_pop($suscriptosArray);
+      $suscriptosPHP = [];
+        foreach ($suscriptosArray as $unSuscripto) {
+            $suscriptosPHP[] =  json_decode($unSuscripto, true);
+          }
+  return $suscriptosPHP;
+  }
+
+function traerUltIDSuscriptos(){
+      $todos = traerSuscriptos();
+        if (count($todos) == 0){
+          return 1;
+        }
+  $ultimoSuscripto = array_pop($todos);
+  $ultimoIDSuscripto = $ultimoSuscripto['id'];
+  return $ultimoIDSuscripto + 1;
+}
 
  ?>

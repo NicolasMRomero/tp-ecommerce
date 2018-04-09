@@ -18,7 +18,6 @@ body{
   font-size: 1em;
 font-family: 'Exo 2', sans-serif;
 }
-
 .titulo-principal{
 	text-align: center;
 	text-decoration: underline;
@@ -40,11 +39,9 @@ footer{
   background-color: #cecece;
   padding-top: 10px;
 }
-
 .card-title{
   font-size: 20px;
 }
-
 .container{
 	margin-top: 5%;
 	margin-bottom: 5%;
@@ -56,7 +53,6 @@ footer{
 	padding-top: 5%;
 }
 /* FORM LOGIN Y REGISTRO*/
-
 .form-control{
   border-radius: 5px;
   border: solid 1px #99A3A4;
@@ -79,8 +75,6 @@ footer{
 .form-text{
 	padding-left: 15%;
 }
-
-
 /* ICONS LOGIN FCBK Y GOOGLE*/
  .titulo-icons{
   width: 100%;
@@ -106,24 +100,21 @@ footer{
   justify-content: space-around;
   align-items: center;
   padding: 18px;
+	margin: 5px;
   height: 50px;
   border-radius: 50px;
   box-shadow: 0 8px 23px 0px rgba(0, 0, 0, 0.1);
 }
-
 .navbar-brand {
 	width: 100px;
 }
-
 .card-header{
 	background-color: #603260;
 }
-
 .card-header h5 a{
 	color: white;
 	text-decoration: none;
 }
-
 .card{
 	width: 100% !important;
 		margin-bottom: 20px;
@@ -131,7 +122,6 @@ footer{
 .titulo-principal{
 	text-decoration: none;
 }
-
 .buscar, .btn{
 	background-color: #603260;
 	border: none;
@@ -139,53 +129,62 @@ footer{
 .btn{
 	color: #ffff;
 }
-
 .buscar:hover, .btn:hover{
 	background-color: #797979;
 	border: none;
 }
-
 .acordeones{
 	margin-left: 5%;
 	margin-right: 5%;
 }
-
 .nav-item{
 	font-weight: 600;
 }
-
 .carousel-control-prev-icon{
 	color: #603260;
 }
-
 .carousel-caption h5{
 	font-size: 3.55rem;
 	text-shadow: 2px 5px #603260;
 }
-
 .form-newsletter{
 	width: 50%;
 }
-
 .btn-primary{
 	background-color: #603260;
 	border: none;
 	margin-left: 0;
 	margin: 15px;
 }
-
 .btn-primary:hover{
 	background-color: #797979;
 	border: none;
 }
-
 .link-footer{
 	text-decoration: none !important;
 }
-
 .logo-menu{
 	width: 70px;
 }
+/* PERFIL */
+.container-avatar {
+	padding: 5%;
+	margin: 50px;
+	border: solid 2px #797979;
+}
+.card-datos {
+	margin-top: 20px;
+	display: flex;
+	justify-content: text-center;
+}
+.imagen-avatar {
+	width: 250px;
+	margin-top: 20px;
+	border-radius: 50%;
+	box-shadow: 0 0 10px #555
+}
+
+/*media queries*/
 
 @media (max-width:500px) {
 	.productos{
