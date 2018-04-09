@@ -19,7 +19,7 @@ if ($_POST){
 
     if (isset($_POST['recordarme'])){
       setcookie('id', $usuario['id'], time() + 3600 * 24 * 30);
-    } 
+    }
     header('Location: perfil.php');
     exit;
   }

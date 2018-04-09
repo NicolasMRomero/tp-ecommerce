@@ -84,7 +84,6 @@ function traerTodos(){
           }
       return $todosPHP;
   }
-
 function traerUltimoID(){
       $todos = traerTodos();
         if (count($todos) == 0){
@@ -110,7 +109,6 @@ function guardarImagen($avatar){
     $nombreArchivo = $_FILES[$avatar]['name'];
     $ext = pathinfo($nombreArchivo, PATHINFO_EXTENSION);
     $archivoTemp = $_FILES[$avatar]['tmp_name'];
-
   if ($ext == 'jpg' || $ext == 'jpeg' || $ext == 'png' ||$ext == 'JPG' || $ext == 'JPEG' || $ext == 'PNG') {
     $ubicacion = dirname(__file__);
     $ubicacionFisica = $ubicacion . '/images/' .'/usuarios/' . $_POST['email'] . '.' . $ext;
@@ -154,6 +152,11 @@ function loguear($usuario) {
   header('location: perfil.php');
   exit;
 }
+//function estaLogueado() {} LA AGREGUE YO (GISE)
+function estaLogueado() {
+		return isset($_SESSION['id']);
+	}
+//function traerPorId($id){}
 
 function estaLogueado() {
 		return isset($_SESSION['id']);
