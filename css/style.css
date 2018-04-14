@@ -15,8 +15,9 @@ a {
   color: #2E4053;
 }
 body{
+	background-image: url(../images/pow-star.png);
   font-size: 1em;
-font-family: 'Exo 2', sans-serif;
+  font-family: 'Exo 2', sans-serif;
 }
 .titulo-principal{
 	text-align: center;
@@ -164,7 +165,7 @@ footer{
 	text-decoration: none !important;
 }
 .logo-menu{
-	width: 70px;
+	width: 80px;
 }
 /* PERFIL */
 .container-avatar {

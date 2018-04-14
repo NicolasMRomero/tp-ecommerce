@@ -132,7 +132,7 @@ if ($_POST){
 
       <div class="col-12 col-md-6 col-lg-6">
         <div class="card mb-3" style="width: 18rem;">
-          <img class="card-img-top" src="images/funko/funko-elrich.jpg" alt="Card image cap">
+          <img class="card-img-top" src="images/funko/funko-harry.jpg" alt="Card image cap">
           <div class="card-body">
             <h2 class="card-text text-center">FUNKO</h2>
           </div>
