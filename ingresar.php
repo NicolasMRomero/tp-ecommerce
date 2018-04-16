@@ -2,7 +2,7 @@
 require_once('funciones.php');
 
 if (estaLogueado()){
-  header('Location: perfil.php');
+  header('location:perfil.php');
   exit;
 }
 
@@ -17,14 +17,14 @@ if ($_POST){
     if (isset($_POST['recordarme'])){
       setcookie('id', $usuario['id'], time() + 3600 * 24 * 30);
     }
-    header('Location: perfil.php');
+    header('location: perfil.php');
     exit;
   }
 }
 ?>
 <body class="body-forms">
 <form method="post" enctype="multipart/form-data">
-      <div class="container" style="background-color: rgba(255, 255, 255, 0.9);">
+      <div class="container form-login" style="background-color: rgba(255, 255, 255, 0.9);">
           <h1 class="ttitulo-principal text-center pt-3">INICIAR SESIÓN</h1>
       <div class="form-row">
           <div class="form-group">
