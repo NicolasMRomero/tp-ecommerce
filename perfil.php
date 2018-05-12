@@ -1,7 +1,11 @@
 <?php include_once 'header.php';
 require_once('soporte.php');
 
+<<<<<<< HEAD
 if (!$auth->estaLogueado()) {
+=======
+if (!estaLogueado()) {
+>>>>>>> e930515e51e02688b07ec9e70407d71fd353c857
 header('location:ingresar.php');
 exit;
   	}
@@ -18,8 +22,13 @@ $usuario = $db->traerPorId($_SESSION['id']);
             <img src="<?=$usuario->getName()?>" alt="avatar" class="imagen-avatar">
           </div>
           <ul class="list-group">
+<<<<<<< HEAD
             <li class="list-group-item active"><?=" ".$usuario->getName()?>
             <?=" ".$usuario->getLastname()?></li>
+=======
+            <li class="list-group-item active"><?=" ".$usuario['name']?>
+            <?=" ".$usuario['lastname']?></li>
+>>>>>>> e930515e51e02688b07ec9e70407d71fd353c857
             <li class="list-group-item"><a href="#" >Mis Ventas</a></li>
             <li class="list-group-item"><a href="#" >Mis Compras</a></li>
             <li class="list-group-item"><a href="logout.php">CERRAR SESIÓN</a></li>
@@ -28,10 +37,17 @@ $usuario = $db->traerPorId($_SESSION['id']);
           </div> -->
 
           <div class="card col-xs-12 col-lg-3 pr-3" style="width: 18rem;">
+<<<<<<< HEAD
             <img class="card-img-top imagen-perfil" src="<?=$usuario->getPicture()?>" alt="Card image cap">
             <div class="card-body">
               <h5 class="perfil-nombre"><?=" ".$usuario->getName()?>
               <?=" ".$usuario->getLastname()?></h5>
+=======
+            <img class="card-img-top imagen-perfil" src="<?=$usuario['imagen']?>" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="perfil-nombre"><?=" ".$usuario['name']?>
+              <?=" ".$usuario['lastname']?></h5>
+>>>>>>> e930515e51e02688b07ec9e70407d71fd353c857
             </div>
             <ul class="list-group menu-perfil">
               <a href="#" class="opcion-menu" ><li class="list-group-item ">Mis Ventas</li></a>
@@ -45,9 +61,15 @@ $usuario = $db->traerPorId($_SESSION['id']);
           </div>
           <div class="card-datos">
            <ul >
+<<<<<<< HEAD
               <li>Nombre de Usuario: <p> <?=" ".$usuario->getUsername()?></p></li>
               <li>Correo Electrónico:<p><?=" ".$usuario->getEmail()?></p> </li>
               <li>Dirección: <p><?=" ".$usuario->getAddress()?></p> </li>
+=======
+              <li>Nombre de Usuario: <p> <?=" ".$usuario['username']?></p></li>
+              <li>Correo Electrónico:<p><?=" ".$usuario['email']?></p> </li>
+              <li>Dirección: <p><?=" ".$usuario['address']?></p> </li>
+>>>>>>> e930515e51e02688b07ec9e70407d71fd353c857
               <li>Editar Contraseña: <a href="#">Modificar</a> </li>
               </ul>
           </div>

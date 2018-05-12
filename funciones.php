@@ -4,6 +4,7 @@ session_start();
 		$_SESSION['id'] = $_COOKIE['id'];
 	}
 
+
 function crearUsuario($data, $avatar){
     $usuario = [
         'name' => $data['name'],
