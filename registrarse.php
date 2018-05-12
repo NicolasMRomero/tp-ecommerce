@@ -1,7 +1,8 @@
 <?php include_once 'header.php';
-require_once('funciones.php');
-
-if (estaLogueado()) {
+// CAMBIO
+require_once('soporte.php');
+// CAMBIO
+if ($auth->estaLogueado()) {
 		header('Location: perfil.php');
 		exit;
 	}
@@ -27,12 +28,21 @@ if ($_POST) {
     $provincia = trim($_POST['provincia']);
     $pass = trim($_POST['pass']);
     $rpass = trim($_POST['rpass']);
-    $errores = validar($_POST, 'avatar');
+// CAMBIO
+    $errores = $validacion->validarRegistrarse($db, 'avatar');
+
+	  if (empty($errores)) {
+    // CAMBIO
+					$errores = $db->guardarImagen('avatar', $email);
     if (empty($errores)) {
-    			$errores = guardarImagen('avatar');
-    if (empty($errores)) {
-        $usuario = guardarUsuario($_POST, 'avatar');
-        loguear($usuario);
+			$ext = pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION)
+			$picture = 'img/' . $email . '.' . $ext;
+
+			$usuario = new Usuario($_POST["name"], $_POST["email"], $_POST["pass"], $_POST["country"], $picture);
+
+        $usuario = $db->guardarUsuario($usuario, $db);
+        // loguear($usuario);
+				header('location: ingresar.php'); exit;
     }
   }
 }
