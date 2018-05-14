@@ -1,30 +1,36 @@
 <?php include_once 'header.php';
-require_once('funciones.php');
+require_once('soporte.php');
 
-if (estaLogueado()){
-  header('Location: perfil.php');
+if ($auth->estaLogueado()){
+  header('location: perfil.php');
   exit;
 }
 
 $email = "";
 $errores = [];
+
 if ($_POST){
   $email = trim($_POST['email']);
-  $errores = validarLogin($_POST);
+// CAMBIO
+  $errores = $validar->validarIngresar($db);
+
   if (empty($errores)){
-    $usuario = existeMail($email);
-    loguear($usuario);
+    $usuario = $db->existeMail($email);
+
     if (isset($_POST['recordarme'])){
-      setcookie('id', $usuario['id'], time() + 3600 * 24 * 30);
+      setcookie('id', $usuario->getId(), time() + 3600 * 24 * 30);
     }
-    header('Location: perfil.php');
-    exit;
+// CAMBIO
+      $auth->loguear($usuario->getId());
+
+    // header('location: perfil.php');
+    // exit;
   }
 }
 ?>
 <body class="body-forms">
 <form method="post" enctype="multipart/form-data">
-      <div class="container" style="background-color: rgba(255, 255, 255, 0.9);">
+      <div class="container form-login" style="background-color: rgba(255, 255, 255, 0.9);">
           <h1 class="ttitulo-principal text-center pt-3">INICIAR SESIÓN</h1>
       <div class="form-row">
           <div class="form-group">

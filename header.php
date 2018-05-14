@@ -1,3 +1,6 @@
+<?php
+require_once('soporte.php');
+ ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -19,15 +22,14 @@
   <body>
     <!-- Hearder -->
     <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light ">
-        <a class="navbar-brand logo-menu" href="index.php"><img src="images/logo-E.png" alt="logo-E"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light " style="z-index:66">
+        <div class="col-lg-5 collapse navbar-collapse" id="navbarSupportedContent" style="text-align:left">
           <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.php">Home</a>
+            </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                 Productos
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -49,19 +51,27 @@
               <a class="nav-link" href="">Contacto</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="ingresar.php">Ingresar</a>
+              <a class="nav-link" href="perfil.php" style="<?= !$auth->estaLogueado() ? 'display: none;' : '' ; ?>">Mi Perfil</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="registrarse.php">Registrarse</a>
+              <a class="nav-link" href="ingresar.php" style="<?= $auth->estaLogueado() ? 'display: none;' : '' ; ?>">Ingresar</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="perfil.php">Perfil</a>
+              <a class="nav-link" href="registrarse.php" style="<?= $auth->estaLogueado() ? 'display: none;' : '' ; ?>">Registrarse</a>
             </li>
-          </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0 buscar" type="submit"><i class="fas fa-search"></i></button>
-          </form>
-        </div>
+              </ul>
+                </div>
+              <div class="col-lg-2"  style="text-align:center">
+              <a class="navbar-brand logo-menu" href="index.php"><img src="images/logo-E.png" alt="logo-E"></a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              </div>
+          <div class="col-lg-5"  style="text-align:right">
+            <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="search" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0 buscar" type="submit"><i class="fas fa-search"></i></button>
+            </form>
+            </div>
       </nav>
     </header>
