@@ -24,6 +24,7 @@ $usuario = $db->traerPorId($_SESSION['id']);
 
             <li class="list-group-item active"><=" ".$usuario->getName()?>
             <=" ".$usuario->getLastname()?></li>
+>>>>>>> 275cebfcfd6fd7e79866d4dbf31c3d501aa1c88f
             <li class="list-group-item"><a href="#" >Mis Ventas</a></li>
             <li class="list-group-item"><a href="#" >Mis Compras</a></li>
             <li class="list-group-item"><a href="logout.php">CERRAR SESIÓN</a></li>

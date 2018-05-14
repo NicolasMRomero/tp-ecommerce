@@ -15,8 +15,9 @@ a {
   color: #2E4053;
 }
 body{
+	background-image: url(../images/pow-star.png);
   font-size: 1em;
-font-family: 'Exo 2', sans-serif;
+  font-family: 'Exo 2', sans-serif;
 }
 .titulo-principal{
 	text-align: center;
@@ -143,9 +144,14 @@ footer{
 .carousel-control-prev-icon{
 	color: #603260;
 }
+.carousel-caption{
+	background-color: #464647b3;
+}
 .carousel-caption h5{
 	font-size: 3.55rem;
-	text-shadow: 2px 5px #603260;
+}
+.carousel-caption p{
+	font-size: 1.55rem;
 }
 .form-newsletter{
 	width: 50%;
@@ -164,7 +170,7 @@ footer{
 	text-decoration: none !important;
 }
 .logo-menu{
-	width: 70px;
+	width: 80px;
 }
 /* PERFIL */
 .container-avatar {
@@ -172,11 +178,22 @@ footer{
 	margin: 50px;
 	border: solid 2px #797979;
 }
-.card-datos {
-	margin-top: 20px;
-	display: flex;
-	justify-content: text-center;
+
+.card-datos ul li {
+	font-weight: bold;
 }
+
+.card-datos ul li p{
+	font-weight: lighter;
+	display: inline;
+}
+
+.card-datos ul li a{
+	font-weight: lighter;
+	display: inline;
+	text-decoration: none;
+}
+
 .imagen-avatar {
 	width: 250px;
 	margin-top: 20px;
@@ -184,6 +201,66 @@ footer{
 	box-shadow: 0 0 10px #555
 }
 
+.titulo-perfil{
+	font-weight: bold;
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 2.35em;
+}
+
+.perfil-nombre{
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.imagen-perfil{
+	margin-top: 20px;
+}
+
+.menu-perfil{
+	margin-bottom: 20px;
+}
+
+.opcion-menu:hover{
+	text-decoration: none;
+}
+
+.opcion-menu:hover li{
+	color: white;
+	background-color: #603260;
+}
+
+.lista-mis-productos{
+	background-color: #c3c3c3;
+}
+
+.card-perfil-productos{
+	margin-top: 20px;
+}
+
+.titulo-producto{
+	font-size: 2.35em;
+	font-weight: bold;
+}
+
+.img-prod-en-perfil{
+	width: 8em;
+	margin:  20px auto;
+}
+
+.agregar-al-carrito{
+	color: #fff;
+	background-color: #603260;
+	border-color: #603260;
+
+}
+
+.agregar-al-carrito:hover {
+  color: black;
+  background-color: #c3c3c3;
+  border-color: #c3c3c3;
+}
 /*media queries*/
 
 @media (max-width:500px) {
