@@ -1,15 +1,2 @@
-{"name":"Pau","lastname":"Burtin","username":"paula","email":"paulaburtin@gmail.com","pass":"$2y$10$HgfTtqKHzwanlEmb6DLb.e.7CDaEXYIMw5HtZGOfOEcBv\/M\/\/iWi6","address":"Naon","city":"caba","provincia":"CABA","imagen":"images\/usuarios\/paulaburtin@gmail.com.jpg","id":1}
-{"name":"lalo","lastname":"landa","username":"lalolanda","email":"lalolanda@hotmail.com","pass":"$2y$10$JdnGsG67qMWNMW4yL8eyxOiJsQUVw39Ytrwwf65GW.KxrmpBIXojG","address":"xxx","city":"xxx","provincia":"Buenos Aires","imagen":"images\/usuarios\/lalolanda@hotmail.com.jpg","id":2}
-{"name":"Han","lastname":"Solo","username":"hansolo","email":"hansolo@sw.com","pass":"$2y$10$IrT4T5Fizet3VW1qHnXYkuE6UtffJUNFiLcruu2e8eEdR4\/VYlmV6","address":"galaxia","city":"sw","provincia":"Chaco","imagen":"images\/usuarios\/hansolo@sw.com.jpg","id":3}
-{"name":"Gisela","lastname":"sosa","username":"gise","email":"gise@gmail.com","pass":"$2y$10$..B1lGRYB5wUje4jAjjMsu5kSPZaOgZoUMFxk\/eVrqhHWaCRxVGXG","address":"calle","city":"ciudad","provincia":"CABA","imagen":"images\/usuarios\/gise@gmail.com.jpg","id":4}
-<<<<<<< HEAD
-{"name":"test","lastname":null,"username":null,"email":"test@test.com","pass":"$2y$10$stKbVYUYzytIlwlxTWOhue9d75ZKedek1IsUS4w329uNT9H82Uo\/O","address":null,"city":"Buenos Aires","provincia":null,"avatar":"test","id":5}
-{"name":"test","lastname":null,"username":null,"email":"test@test.com","pass":"$2y$10$pod\/vMr978TG9HI1Glqo2uwLolC7Ai5V3VFeQQqNnn.qZ.3U\/zDSK","address":null,"city":"Buenos Aires","provincia":null,"avatar":"test","id":6}
-{"name":"padme","lastname":null,"username":null,"email":"padme@amidala.com","pass":"$2y$10$UTDLV39\/F5hWhYhOuHsmpuFkCpxx2uWnXnrx3kTKD9Kx7mU2XrV1e","address":null,"city":"CABA","provincia":null,"avatar":"galaxia","id":7}
-{"name":"padme","lastname":null,"username":null,"email":"padme@amidala.com","pass":"$2y$10$6Ntk9saG3OYVna.q5W7qQOwqciJdjxMQCmN29Uq.8kJ6eOa42j90K","address":null,"city":"CABA","provincia":null,"avatar":"galaxia","id":8}
-{"name":"pau","lastname":null,"username":null,"email":"pau@pau.com","pass":"$2y$10$pCfc9qT5Xj69RynbURquGOmEHQ6Fztq.b8txQx2fcU1Un4a.biMsG","address":null,"city":"Catamarca","provincia":null,"avatar":"pau","id":9}
-{"name":"paula","lastname":"pau","username":"pau","email":"paula@pau.com","pass":"$2y$10$JzL.vyMBFinlPkiitPoe4.\/wVHiaUg6XSyw\/dCZ8xZX5qYtFVuY7y","address":null,"city":"pau","provincia":"Entre R\u00edos","avatar":null,"id":10}
-{"name":"test","lastname":"tes","username":"test","email":"test@test.com.ar","pass":"$2y$10$M6hzGNRdx2OOoRRHka0qgeUWhvHlR4u.1DIskYwBoChnn1ABsFQE2","address":null,"city":"tes","provincia":"Buenos Aires","avatar":"..\/images\/usuarios\/test@test.com.ar.png","id":11}
-{"name":"hola","lastname":"hola","username":"hola","email":"hola@uf.com","pass":"$2y$10$0U0a6eMoYkL9.ldXIggsjeNFJscx89qRSWH5.BiLIHbVuZz4BHxqe","address":null,"city":"junin","provincia":"Buenos Aires","avatar":"\/images\/\/usuarios\/hola@uf.com.png","id":12}
-=======
->>>>>>> 275cebfcfd6fd7e79866d4dbf31c3d501aa1c88f
+{"name":"Kevin","lastname":"Ghio","username":"kevinghio","email":"kevin@ghio.com","pass":"$2y$10$\/V8Bm.g2fAZ\/\/OmjzBIxzuy1vjgQ0ZgsquNIgGxQkrDRVfdo1XRjK","address":"neuquen","city":"neuquen","provincia":"Neuqu\u00e9n","avatar":"images\/usuarios\/kevin@ghio.com.png","id":5}
+{"name":"pau","lastname":"pau","username":"paupau","email":"pau@pau.com","pass":"$2y$10$KDhEZ2N6zE1DkeKFu9VKW..JO8elASaFVoWv\/3ckDpTFOj5DAOZge","address":"pau","city":"pau","provincia":"CABA","avatar":"images\/usuarios\/pau@pau.com.png","id":6}

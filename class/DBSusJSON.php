@@ -5,21 +5,21 @@ class DBSusJSON extends DBS{
   private $suscriptos;
 
   public function __construct(){
-    $this-> suscriptos = "suscriptos.json";
+    $this->suscriptos = "suscriptos.json";
   }
 
 public function traerSuscriptos(){
         $suscriptosJSON = file_get_contents($this->suscriptos);
         $suscriptosArray = explode(PHP_EOL, $suscriptosJSON);
         array_pop($suscriptosArray);
-        $suscriptosPHP = [];
+        $suscriptores = [];
           foreach ($suscriptosArray as $unSuscripto) {
-              $suscriptosPHP[] = json_decode($unSuscripto, true);
-              $unSuscripto = new Suscriptor($suscriptosPHP['email']);
-              $unSuscripto->setIdSus($suscriptosPHP['id']);
-              $suscriptosPHP[]=$unSuscripto;
+              $suscriptoJSON[] = json_decode($unSuscripto, true);
+              $unSuscripto = new Suscriptor($suscriptoJSON['email']);
+              $unSuscripto->setIdSus($suscriptoJSON['id']);
+              $suscriptores[] = $unSuscripto;
             }
-    return $suscriptosPHP;
+    return $suscriptores;
     }
 
 

@@ -5,11 +5,11 @@ class dbJSON extends DB{
   private $archive;
 
   public function __construct(){
-    $this-> archive = "usuarios.json";
+    $this->archive = "usuarios.json";
   }
   public function guardarUsuario(Usuario $usuario, DB $db){
 
-  $user =  $usuario -> crearUsuario($db);
+  $user =  $usuario->crearUsuario($db);
     $userEnJSON = json_encode($user);
     file_put_contents($this->archive, $userEnJSON . PHP_EOL, FILE_APPEND);
     return $user;
@@ -22,7 +22,7 @@ class dbJSON extends DB{
     $usuarios = [];
       foreach ($usuariosArray as $usuario) {
           $usuarioJSON =  json_decode($usuario, true);
-          $usuario = new Usuario($usuarioJSON['name'], $usuarioJSON['lastname'], $usuarioJSON['username'], $usuarioJSON['email'],$usuarioJSON['pass'], $usuarioJSON['address'], $usuarioJSON['city'], $usuarioJSON['provincia'],  $usuarioJSON['avatar']);
+          $usuario = new Usuario($usuarioJSON['name'], $usuarioJSON['lastname'], $usuarioJSON['username'], $usuarioJSON['email'],$usuarioJSON['pass'], $usuarioJSON['address'], $usuarioJSON['city'], $usuarioJSON['provincia'],$usuarioJSON['avatar']);
           $usuario->setId($usuarioJSON['id']);
           $usuarios[] = $usuario;
         }
@@ -40,7 +40,7 @@ class dbJSON extends DB{
   }
 
   public function traerUltimoID(){
-        $todos = $this-> traerTodos();
+        $todos = $this->traerTodos();
           if (count($todos) == 0){
             return 1;
           }

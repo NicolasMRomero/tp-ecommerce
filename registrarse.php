@@ -37,13 +37,13 @@ if ($_POST) {
 
 		if (empty($errores)) {
 			$ext = pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION);
-			$avatar = '/../images/usuarios/' . $email . '.' . $ext;
+			$avatar = 'images/usuarios/' . $email . '.' . $ext;
 
 			$usuario = new Usuario($_POST["name"], $_POST['lastname'], $_POST['username'], $_POST["email"], $_POST["pass"], $_POST["address"], $_POST['city'], $_POST['provincia'], $avatar);
 
         $usuario = $db->guardarUsuario($usuario, $db);
         // loguear($usuario);
-				header('location: ingresar.php'); exit;
+				header('location: perfil.php'); exit;
     }
   }
 }

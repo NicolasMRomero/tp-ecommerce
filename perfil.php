@@ -12,26 +12,7 @@ $usuario = $db->traerPorId($_SESSION['id']);
  <img class="banner-perfil" src="images/banner-death-star.png" alt="perfil">
   </div>
   <section class="container-avatar">
-      <!--   <div class="row">
-         <div class="perfil-col-izq col-xs-12 col-lg-3 pr-3">
-          <div>
-            <img src="<$usuario->getName()?>" alt="avatar" class="imagen-avatar">
-          </div>
-          <ul class="list-group">
-
-            <li class="list-group-item active"><=" ".$usuario->getName()?>
-            <=" ".$usuario->getLastname()?></li>
-
-            <li class="list-group-item active"><=" ".$usuario->getName()?>
-            <=" ".$usuario->getLastname()?></li>
->>>>>>> 275cebfcfd6fd7e79866d4dbf31c3d501aa1c88f
-            <li class="list-group-item"><a href="#" >Mis Ventas</a></li>
-            <li class="list-group-item"><a href="#" >Mis Compras</a></li>
-            <li class="list-group-item"><a href="logout.php">CERRAR SESIÓN</a></li>
-          </ul>
-
-          </div>-->
-
+       <div class="row">
           <div class="card col-xs-12 col-lg-3 pr-3" style="width: 18rem;">
             <img class="card-img-top imagen-perfil" src="<?=$usuario->getImagen()?>" alt="Card image cap">
             <div class="card-body">

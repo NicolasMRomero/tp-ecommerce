@@ -1,16 +1,16 @@
 <?php
 class Usuario{
 
-  private  $name;
-  private  $lastname;
-  private  $username;
-  private  $email;
-  private  $pass;
-  private  $address;
-  private  $city;
-  private  $provincia;
-  private  $avatar;
-  private  $id;
+  public  $name;
+  public  $lastname;
+  public  $username;
+  public  $email;
+  public  $pass;
+  public  $address;
+  public  $city;
+  public  $provincia;
+  public  $avatar;
+  public  $id;
 
 
 public function __construct($name, $lastname, $username, $email, $pass, $address, $city, $provincia, $avatar){
@@ -19,7 +19,7 @@ public function __construct($name, $lastname, $username, $email, $pass, $address
   $this->username = $username;
   $this->email = $email;
 	$this->pass = $pass;
-  $this->addres = $address;
+  $this->address = $address;
   $this->city = $city;
   $this->provincia = $provincia;
   $this->avatar = $avatar;

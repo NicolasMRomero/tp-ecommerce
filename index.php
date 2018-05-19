@@ -4,7 +4,7 @@ require_once('soporte.php');
 if ($_POST){
   $suscriptor = [
     'email' => trim($_POST['email']),
-    'id' => traerUltIDSuscriptos()
+    'id' => $dbsuscriptos->traerUltIDSuscriptos()
   ];
     $suscriptorJSON = json_encode($suscriptor);
   file_put_contents($this->suscriptos, $suscriptorJSON . PHP_EOL, FILE_APPEND);
