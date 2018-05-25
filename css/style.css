@@ -261,6 +261,20 @@ footer{
   background-color: #c3c3c3;
   border-color: #c3c3c3;
 }
+/*index db */
+
+.buttons {
+ display: flex;
+ justify-content: space-around;
+ position: absolute;
+ width: 100%;
+ padding-top: 25%;
+ }
+
+.botones-portada {
+ background-color: #603260 !important;
+}
+
 /*media queries*/
 
 @media (max-width:500px) {

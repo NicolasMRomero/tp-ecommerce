@@ -1,23 +1,5 @@
 <?php include_once 'header.php';
 require_once('soporte.php');
-
-if ($_POST){
-  $suscriptor = [
-    'email' => trim($_POST['email']),
-    'id' => $dbsuscriptos->traerUltIDSuscriptos()
-  ];
-    $suscriptorJSON = json_encode($suscriptor);
-  file_put_contents($this->suscriptos, $suscriptorJSON . PHP_EOL, FILE_APPEND);
-}
-
-$erroremail = '';
-if ($_POST){
-      if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
-        $erroremail = "Poné un email correcto";
-      } else{
-        $erroremail= "¡Listo! Quedamos en contacto 😉";
-      }
-}
 ?>
     <section class="slider">
       <div id="sliderPortada" class="carousel slide" data-ride="carousel">
@@ -175,8 +157,8 @@ if ($_POST){
            <h6 class="font-weight-bold">
                <strong>Suscribite a nuestro newsletter</strong>
            </h6></label>
-           <input type="email" class="form-control form-newsletter" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingresá tu email" name="email" value="<?=isset($_POST['email'])? $_POST['email'] : ''?>">
-           <span class="form-group-input" style="color: #603260; padding-right:15%;"> <?=$erroremail?> </span>
+           <input type="email" class="form-control form-newsletter" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingresá tu email" name="email" value="">
+
             <br>
           <button type="submit" class="btn btn-primary">ENVIAR</button>
         </div>

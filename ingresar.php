@@ -52,8 +52,8 @@ if ($_POST){
         <div class="form-row">
             <div class="form-group col-md-8 text-center pt-3 pb-4">
                 <div class="form-check pb-3">
-                <input class="form-check-input" type="checkbox" id="gridCheck">
-                <label class="form-check-label" for="gridCheck" name="recordarme">
+                <input class="form-check-input" type="checkbox" id="gridCheck" name="recordarme">
+                <label class="form-check-label" for="gridCheck">
                   Recordarme </label>
                 </div>
               <button type="submit" class="btn btn-block disabled">Ingresar</button>

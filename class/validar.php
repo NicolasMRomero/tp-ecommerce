@@ -63,7 +63,7 @@ public function validarRegister(DB $db, $avatar){
   		if ($email == '') {
   			$errores['email'] = "Ingresá tu mail.";
   		} elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-  			$errores['email'] = "El mail ingresado es inocorrecto.";
+  			$errores['email'] = "El mail ingresado es incorrecto.";
   		} elseif (!$usuario = $db->existeMail($email)) {
   			$errores['email'] = "Este mail no está registrado. ¡Unite!";
   		} else {

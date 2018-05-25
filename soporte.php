@@ -2,7 +2,6 @@
 	require_once 'class/auth.php';
 	require_once 'class/validar.php';
 	require_once 'class/dbJSON.php';
-	require_once 'class/DBSusJSON.php';
 
 
 	$auth = new Auth();
