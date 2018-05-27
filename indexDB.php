@@ -3,7 +3,7 @@ require_once('soporte.php');
 
 //no sé si la clase que armé debería extender de $db al igual que dbJSON
 //por algun motivo no me toma el css del style que tiene la url con la foto del background
-//cambié un poco el html porque eran etiquetas <a> y no <button> así que no pasaba naranja cuando los clickeaba 
+//cambié un poco el html porque eran etiquetas <a> y no <button> así que no pasaba naranja cuando los clickeaba
 
 
 if($_POST){
@@ -56,7 +56,7 @@ if($_POST){
     </header>
 
     <form  action="" method="post">
-      <div class="container container-portada">
+      <div class="container-portada">
         <section>
 
             <div class="form-row ">
