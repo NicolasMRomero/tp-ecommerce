@@ -1,27 +1,16 @@
 <?php
 require_once('soporte.php');
 
-//no sé si la clase que armé debería extender de $db al igual que dbJSON
-//por algun motivo no me toma el css del style que tiene la url con la foto del background
-//cambié un poco el html porque eran etiquetas <a> y no <button> así que no pasaba naranja cuando los clickeaba
-
-
 if($_POST){
 
     if(isset($_POST['createdb'])){
-      $action = $db->createDB();
+      $action=$db->createDB();
+
     }
 
-      if(isset($_POST['createtable'])){
-        if ($db->createDB() == true){  //--> como llamo a la function conectar a la base en crear tabla estoy evitando repertirlo acá-> se supone que si no conecta va a dar error
-        /* $action = connectDB();
-        } else {
-         $status = 'Tenés que conectarte a la db';
-        }
-        if(connectDB() == true){ */
-          $action = $db->createTable();
-        }
-      }
+    if(isset($_POST['createtable'])){
+      $action=$db->createTable();
+    }
 
       if(isset($_POST['migrar'])){
 

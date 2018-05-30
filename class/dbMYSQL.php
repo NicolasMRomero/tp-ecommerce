@@ -11,7 +11,7 @@ public function createDB(){
   $db_pass = '';
 
   try {
-      $db = new PDO('mysql:host=$serve_name', $db_user, $db_pass);
+      $db = new PDO('mysql:host='.$serve_name,$db_user,$db_pass);
       $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
       $sql = "CREATE DATABASE usuarios_db";
@@ -19,9 +19,10 @@ public function createDB(){
       $db->exec($sql);
 
       $status = "¡Hell yeah! La db fue creada con éxito ;) \n";
+      return $status;
       }
   catch(PDOException $Exception) {
-      $status = 'Houston we have a problem. La db no se creó ' . $Exception->getMessage() . "\n";
+      $status = 'Houston we have a problem. La db no se creó ';
         return false;
     }
 
@@ -30,7 +31,7 @@ public function createDB(){
 //conectarse a la DB
 //me conecto a la db que creé antes
 
-public function connectDB(){
+  public function connectDB(){
   $dsn = 'mysql:host=localhost; dbname=usuarios_db; charset=utf8';
   $db_user = 'root';
   $db_pass = '';
@@ -38,6 +39,7 @@ public function connectDB(){
 
   try {
     $db = new PDO($dsn, $db_user, $db_pass, $opt);
+    return $db;
   }
   catch( PDOException $Exception ) {
   $status = 'No se pudo conectar a la db' . $Exception->getMessage();
@@ -53,10 +55,10 @@ public function connectDB(){
 
 public function createTable(){
 
-  $db = connectDB();
+  $db = $this->connectDB();
 
     try {
-      $sql = "CREATE TABLE usuarios (
+      $sql = 'CREATE TABLE usuarios (
          id int(10) unsigned NOT NULL AUTO_INCREMENT PRIMARY KEY,
          name varchar(50) NOT NULL,
          lastname varchar(50) NOT NULL,
@@ -67,12 +69,18 @@ public function createTable(){
          city varchar(50) NOT NULL,
          provincia varchar(50) NOT NULL,
          avatar varchar(50) NOT NULL
-       ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1";
+       )';
 
-       $db->exec($sql);
+      $stmt = $db->prepare($sql);
 
-       $status = "¡Tu tabla fue creada! ;) \n";
+      $stmt->execute();
+
+      $status = "¡Tu tabla fue creada! :guiño: \n";
+
+      return $stmt;
+
        }
+
     catch( PDOException $Exception ) {
 
       $status = 'No se pudo crear la tabla :(' . $Exception->getMessage() . "\n";
@@ -99,7 +107,7 @@ public function createTable(){
 
       $sql = "INSERT INTO usuarios (name, lastname, username, email, pass, address, city, provincia, avatar) VALUES (:name, :lastname, :username, :email, :pass, :address, :city, :provincia, :avatar)";
 
-    $query = $db->prepare($sql);
+      $query = $db->prepare($sql);
 
           $query->bindParam(':name', $this->name, PDO::PARAM_STR);
           $query->bindParam(':lastname', $this->lastname, PDO::PARAM_STR);
