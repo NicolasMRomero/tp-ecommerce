@@ -263,6 +263,13 @@ footer{
 }
 /*index db */
 
+.container-portada{
+	background-image: url(../images/portada-dark.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
 .buttons {
  display: flex;
  justify-content: space-around;
@@ -271,9 +278,6 @@ footer{
  padding-top: 50%;
  }
 
-.container-portada{
-	background-image: url(../images/portada-dark.jpg);
-}
 
 /*media queries*/
 
