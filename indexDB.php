@@ -14,7 +14,11 @@ if($_POST){
 
       if(isset($_POST['migrar'])){
           $db->migrar();
-          echo '¡Usuario insertado con éxito!';
+          if($db->migrar()){
+          header('location: index.php');
+        }else{
+          echo "no se pudo";
+        }
     }
 //si pongo un if else, entra directo al else.
 //si dejo solo el migrar() me retorna el echo pero entra al false de la función y no hace nada, mas que imprimir el echo.

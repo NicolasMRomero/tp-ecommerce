@@ -102,7 +102,7 @@ public function createTable(){
     foreach ($arrayjson as $user) {
      $usuariosPHP = json_decode($user, true);
 
-      $sql = "INSERT INTO usuarios (name, lastname, username, email, pass, address, city, provincia, avatar) VALUES (:name, :lastname, :username, :email, :pass, :address, :city, :provincia, :avatar)";
+      $sql = "INSERT INTO usuarios (name, lastname, username, email, pass, address, city, provincia, avatar) VALUES (name, lastname, username, email, pass, address, city, provincia, avatar)";
 
     $user = [];
     //si no pongo esta variable como array me dice que -> Warning: Illegal string offset 'name' in /Applications/XAMPP/xamppfiles/htdocs/tp-ecommerce/class/dbMYSQL.php on line 113
@@ -120,11 +120,10 @@ public function createTable(){
 
    $stmt->execute();
 
-   return $stmt;
-
      $status = '¡Usuario insertado con éxito!';
-   }
-//el return no sé si va dentro o fuera del foreach. probé todas las formas y no cambia. 
+   }    return $stmt;
+
+//el return no sé si va dentro o fuera del foreach. probé todas las formas y no cambia.
 
   }
 
