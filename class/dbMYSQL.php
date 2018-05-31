@@ -1,6 +1,7 @@
 <?php
 
-class dbMYSQL {
+
+class dbMYSQL{
 
 //para crear la db
 //me conecto al servidor y creo la db, devuelvo status con mensaje de exito o exception de errores
@@ -30,8 +31,7 @@ public function createDB(){
 
 //conectarse a la DB
 //me conecto a la db que creé antes
-
-  public function connectDB(){
+public function connectDB(){
   $dsn = 'mysql:host=localhost; dbname=usuarios_db; charset=utf8';
   $db_user = 'root';
   $db_pass = '';
@@ -47,6 +47,7 @@ public function createDB(){
   }
 
   }
+
 
 
 //crear tabla
@@ -89,6 +90,8 @@ public function createTable(){
 
   }
 
+
+
 //insert into de registros a la DB
 // me conecto a la db y hago un try con insert into por cada input del form a la tabla creada anteriormente devuelvo mensaje de error o exito
 
@@ -96,30 +99,70 @@ public function createTable(){
 //kevin nos había dicho que armemos una funcion pedirusuarios() y que si eso retornaba 0 había que hacer la migracion o algo así....
 
  public function migrar(){
-
-    $db = connectDB();
   try {
+   $userjson = file_get_contents('usuarios.json');
+   $arrayjson = explode(PHP_EOL, $userjson);
+   var_dump($userjson);
+   exit;
+   array_pop($arrayjson);
 
-      $userjson = json_decode(file_get_contents('usuarios.json'), true);
-      foreach ($userjson as $key => $value) {
-        // code...
-      }
+    foreach ($arrayjson as $user) {
+     $usuariosPHP = json_decode($user, true);
 
       $sql = "INSERT INTO usuarios (name, lastname, username, email, pass, address, city, provincia, avatar) VALUES (:name, :lastname, :username, :email, :pass, :address, :city, :provincia, :avatar)";
 
-      $query = $db->prepare($sql);
+      $stms = $db->prepare($sql);
 
-          $query->bindParam(':name', $this->name, PDO::PARAM_STR);
-          $query->bindParam(':lastname', $this->lastname, PDO::PARAM_STR);
-          $query->bindParam(':username', $this->username, PDO::PARAM_STR);
-          $query->bindParam(':email', $this->email, PDO::PARAM_STR);
-          $query->bindParam(':pass', $this->pass, PDO::PARAM_STR);
-          $query->bindParam(':address', $this->address, PDO::PARAM_STR);
-          $query->bindParam(':city', $this->city, PDO::PARAM_STR);
-          $query->bindParam(':provincia', $this->provincia, PDO::PARAM_STR);
-          $query->bindParam(':avatar', $this->avatar, PDO::PARAM_STR);
+           $stms->bindParam(':name', $this->name, PDO::PARAM_STR);
+           $stms->bindParam(':lastname', $this->lastname, PDO::PARAM_STR);
+           $stms->bindParam(':username', $this->username, PDO::PARAM_STR);
+           $stms->bindParam(':email', $this->email, PDO::PARAM_STR);
+           $stms->bindParam(':pass', $this->pass, PDO::PARAM_STR);
+           $stms->bindParam(':address', $this->address, PDO::PARAM_STR);
+           $stms->bindParam(':city', $this->city, PDO::PARAM_STR);
+           $stms->bindParam(':provincia', $this->provincia, PDO::PARAM_STR);
+           $stms->bindParam(':avatar', $this->avatar, PDO::PARAM_STR);
 
-      $query->execute();
+           $stms->execute();
+
+
+   }
+   // $stms = $db->prepare($sql);
+   //
+   //      $stms->bindParam('name', $this->name, PDO:PARAM_STR);
+   //      $stms->bindParam('lastname', $this->lastname, PDO:PARAM_STR);
+   //      $stms->bindParam('username', $this->username, PDO:PARAM_STR);
+   //      $stms->bindParam('email', $this->email, PDO:PARAM_STR);
+   //      $stms->bindParam('pass', $this->pass, PDO:PARAM_STR);
+   //      $stms->bindParam('address', $this->address, PDO:PARAM_STR);
+   //      $stms->bindParam('city', $this->city, PDO:PARAM_STR);
+   //      $stms->bindParam('provincia', $this->provincia, PDO:PARAM_STR);
+   //      $stms->bindParam('avatar', $this->avatar, PDO:PARAM_STR);
+   //
+   //      $stms->execute();
+   //
+   //   }
+
+      // foreach ($userjson as $key => $value) {
+      //   // code...
+  //    }
+
+    //   $sql = "INSERT INTO usuarios (name, lastname, username, email, pass, address, city, provincia, avatar) VALUES (:name, :lastname, :username, :email, :pass, :address, :city, :provincia, :avatar)";
+    //
+    // $query = $db->prepare($sql);
+    //
+    //       $query->bindParam(':name', $this->name, PDO::PARAM_STR);
+    //       $query->bindParam(':lastname', $this->lastname, PDO::PARAM_STR);
+    //       $query->bindParam(':username', $this->username, PDO::PARAM_STR);
+    //       $query->bindParam(':email', $this->email, PDO::PARAM_STR);
+    //       $query->bindParam(':pass', $this->pass, PDO::PARAM_STR);
+    //       $query->bindParam(':address', $this->address, PDO::PARAM_STR);
+    //       $query->bindParam(':city', $this->city, PDO::PARAM_STR);
+    //       $query->bindParam(':provincia', $this->provincia, PDO::PARAM_STR);
+    //       $query->bindParam(':avatar', $this->avatar, PDO::PARAM_STR);
+    //
+    //   $query->execute();
+
 
           $status = '¡Usuario insertado con éxito!';
             }
@@ -128,8 +171,6 @@ public function createTable(){
                 }
     return $status;
   }
-
-
 
 
 }

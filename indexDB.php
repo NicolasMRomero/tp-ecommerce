@@ -13,7 +13,7 @@ if($_POST){
     }
 
       if(isset($_POST['migrar'])){
-
+          $db->migrar();
           }
 
 }
