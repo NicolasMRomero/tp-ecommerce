@@ -1,34 +1,25 @@
 <?php
 require_once('soporte.php');
 
-//no sé si la clase que armé debería extender de $db al igual que dbJSON
-//por algun motivo no me toma el css del style que tiene la url con la foto del background
-//cambié un poco el html porque eran etiquetas <a> y no <button> así que no pasaba naranja cuando los clickeaba 
-
-
 if($_POST){
 
     if(isset($_POST['createdb'])){
-      $action = $db->createDB();
+    $db->createDB();
     }
 
-      if(isset($_POST['createtable'])){
-        if ($db->createDB() == true){  //--> como llamo a la function conectar a la base en crear tabla estoy evitando repertirlo acá-> se supone que si no conecta va a dar error
-        /* $action = connectDB();
-        } else {
-         $status = 'Tenés que conectarte a la db';
-        }
-        if(connectDB() == true){ */
-          $action = $db->createTable();
-        }
-      }
+    if(isset($_POST['createtable'])){
+    $db->createTable();
+      echo "¡Tu tabla fue creada! ;) \n";
+    }
 
       if(isset($_POST['migrar'])){
-
-          }
-
+          $db->migrar();
+          echo '¡Usuario insertado con éxito!';
+    }
+//si pongo un if else, entra directo al else.
+//si dejo solo el migrar() me retorna el echo pero entra al false de la función y no hace nada, mas que imprimir el echo.
+//en la tabla solo tengo una row con todos los campos en NULL
 }
-
 ?>
 
 
@@ -56,7 +47,7 @@ if($_POST){
     </header>
 
     <form  action="" method="post">
-      <div class="container container-portada">
+      <div class="container-portada">
         <section>
 
             <div class="form-row ">

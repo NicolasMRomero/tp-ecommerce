@@ -1,6 +1,7 @@
 <?php
 
-class dbMYSQL {
+
+class dbMYSQL{
 
 //para crear la db
 //me conecto al servidor y creo la db, devuelvo status con mensaje de exito o exception de errores
@@ -11,7 +12,7 @@ public function createDB(){
   $db_pass = '';
 
   try {
-      $db = new PDO('mysql:host=$serve_name', $db_user, $db_pass);
+      $db = new PDO('mysql:host='.$serve_name,$db_user,$db_pass);
       $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
       $sql = "CREATE DATABASE usuarios_db";
@@ -19,9 +20,10 @@ public function createDB(){
       $db->exec($sql);
 
       $status = "¡Hell yeah! La db fue creada con éxito ;) \n";
+      return true;
       }
   catch(PDOException $Exception) {
-      $status = 'Houston we have a problem. La db no se creó ' . $Exception->getMessage() . "\n";
+      $status = 'Houston we have a problem. La db no se creó ';
         return false;
     }
 
@@ -29,7 +31,6 @@ public function createDB(){
 
 //conectarse a la DB
 //me conecto a la db que creé antes
-
 public function connectDB(){
   $dsn = 'mysql:host=localhost; dbname=usuarios_db; charset=utf8';
   $db_user = 'root';
@@ -38,6 +39,7 @@ public function connectDB(){
 
   try {
     $db = new PDO($dsn, $db_user, $db_pass, $opt);
+    return $db;
   }
   catch( PDOException $Exception ) {
   $status = 'No se pudo conectar a la db' . $Exception->getMessage();
@@ -47,17 +49,15 @@ public function connectDB(){
   }
 
 
+
 //crear tabla
-// me conecto a la db y creo una tabla 'usuarios' devuelvo errores o exito con la variable status
-// No sé qué onda lo de engine, el autoincremente deafult y el charset latin1 pero los saqué de el ej que me había pasado pato de la clase de platos que yo había faltado....
 
 public function createTable(){
 
-  $db = connectDB();
+  $db = $this->connectDB();
 
     try {
-      $sql = "CREATE TABLE usuarios (
-         id int(10) unsigned NOT NULL AUTO_INCREMENT PRIMARY KEY,
+      $sql = 'CREATE TABLE usuarios (
          name varchar(50) NOT NULL,
          lastname varchar(50) NOT NULL,
          username varchar(50) NOT NULL,
@@ -66,13 +66,18 @@ public function createTable(){
          address varchar(50) NOT NULL,
          city varchar(50) NOT NULL,
          provincia varchar(50) NOT NULL,
-         avatar varchar(50) NOT NULL
-       ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1";
+         avatar varchar(50) NOT NULL,
+         id int(10) unsigned NOT NULL AUTO_INCREMENT PRIMARY KEY
+       )';
 
-       $db->exec($sql);
+      $stmt = $db->prepare($sql);
 
-       $status = "¡Tu tabla fue creada! ;) \n";
+      $stmt->execute();
+
+      return $stmt;
+
        }
+
     catch( PDOException $Exception ) {
 
       $status = 'No se pudo crear la tabla :(' . $Exception->getMessage() . "\n";
@@ -81,47 +86,53 @@ public function createTable(){
 
   }
 
-//insert into de registros a la DB
-// me conecto a la db y hago un try con insert into por cada input del form a la tabla creada anteriormente devuelvo mensaje de error o exito
 
-//no sé como se debería hacer el foreach para que tome los usuarios del json y los meta en la tabla con el insert into...
-//kevin nos había dicho que armemos una funcion pedirusuarios() y que si eso retornaba 0 había que hacer la migracion o algo así....
+//insert into de registros a la DB
 
  public function migrar(){
 
-    $db = connectDB();
-  try {
+   $db = $this->connectDB();
+   //si saco esto me dice que db no está definida
 
-      $userjson = json_decode(file_get_contents('usuarios.json'), true);
-      foreach ($userjson as $key => $value) {
-        // code...
-      }
+  try {
+   $userjson = file_get_contents('usuarios.json');
+   $arrayjson = explode(PHP_EOL, $userjson);
+
+    array_pop($arrayjson);
+    foreach ($arrayjson as $user) {
+     $usuariosPHP = json_decode($user, true);
 
       $sql = "INSERT INTO usuarios (name, lastname, username, email, pass, address, city, provincia, avatar) VALUES (:name, :lastname, :username, :email, :pass, :address, :city, :provincia, :avatar)";
 
-    $query = $db->prepare($sql);
+    $user = [];
+    //si no pongo esta variable como array me dice que -> Warning: Illegal string offset 'name' in /Applications/XAMPP/xamppfiles/htdocs/tp-ecommerce/class/dbMYSQL.php on line 113
 
-          $query->bindParam(':name', $this->name, PDO::PARAM_STR);
-          $query->bindParam(':lastname', $this->lastname, PDO::PARAM_STR);
-          $query->bindParam(':username', $this->username, PDO::PARAM_STR);
-          $query->bindParam(':email', $this->email, PDO::PARAM_STR);
-          $query->bindParam(':pass', $this->pass, PDO::PARAM_STR);
-          $query->bindParam(':address', $this->address, PDO::PARAM_STR);
-          $query->bindParam(':city', $this->city, PDO::PARAM_STR);
-          $query->bindParam(':provincia', $this->provincia, PDO::PARAM_STR);
-          $query->bindParam(':avatar', $this->avatar, PDO::PARAM_STR);
+    $stmt = $db->prepare($sql);
+           $stmt->bindParam(':name', $user['name'], PDO::PARAM_STR);
+           $stmt->bindParam(':lastname', $user['lastname'], PDO::PARAM_STR);
+           $stmt->bindParam(':username', $user['username'], PDO::PARAM_STR);
+           $stmt->bindParam(':email', $user['email'], PDO::PARAM_STR);
+           $stmt->bindParam(':pass', $user['pass'], PDO::PARAM_STR);
+           $stmt->bindParam(':address', $user['address'], PDO::PARAM_STR);
+           $stmt->bindParam(':city', $user['city'], PDO::PARAM_STR);
+           $stmt->bindParam(':provincia', $user['provincia'], PDO::PARAM_STR);
+           $stmt->bindParam(':avatar', $user['avatar'], PDO::PARAM_STR);
 
-      $query->execute();
+   $stmt->execute();
 
-          $status = '¡Usuario insertado con éxito!';
-            }
-    catch( PDOException $Exception ) {
-          $status = '¡Problemas al insertar el registro!' . $Exception->getMessage() . "\n";
-                }
-    return $status;
+   return $stmt;
+
+     $status = '¡Usuario insertado con éxito!';
+   }
+//el return no sé si va dentro o fuera del foreach. probé todas las formas y no cambia. 
+
   }
 
-
+    catch( PDOException $Exception ) {
+          $status = '¡Problemas al insertar el registro!' . $Exception->getMessage() . "\n";
+          return false;
+                }
+  }
 
 
 }

@@ -1,7 +1,5 @@
 <?php include_once 'header.php';
-// CAMBIO
 require_once('soporte.php');
-// CAMBIO
 if ($auth->estaLogueado()) {
 		header('Location: perfil.php');
 		exit;
@@ -28,11 +26,10 @@ if ($_POST) {
     $provincia = trim($_POST['provincia']);
     $pass = trim($_POST['pass']);
     $rpass = trim($_POST['rpass']);
-// CAMBIO
+
     $errores = $validar->validarRegister($db, 'avatar');
 
 	  if (empty($errores)) {
-    // CAMBIO
 			$errores = $db->guardarImagen('avatar', $email);
 
 		if (empty($errores)) {
@@ -42,7 +39,6 @@ if ($_POST) {
 			$usuario = new Usuario($_POST["name"], $_POST['lastname'], $_POST['username'], $_POST["email"], $_POST["pass"], $_POST["address"], $_POST['city'], $_POST['provincia'], $avatar);
 
         $usuario = $db->guardarUsuario($usuario, $db);
-        // loguear($usuario);
 				header('location: perfil.php'); exit;
     }
   }

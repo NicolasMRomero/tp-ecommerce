@@ -8,7 +8,7 @@
 	$auth = new Auth();
 	$validar = new Validate();
 
-	$typeDB = 'json';
+	$typeDB = 'mysql';
 
 	switch ($typeDB) {
 		case 'json':
