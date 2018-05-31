@@ -108,15 +108,15 @@ public function createTable(){
     //si no pongo esta variable como array me dice que -> Warning: Illegal string offset 'name' in /Applications/XAMPP/xamppfiles/htdocs/tp-ecommerce/class/dbMYSQL.php on line 113
 
     $stmt = $db->prepare($sql);
-           $stmt->bindParam(':name', $user['name'], PDO::PARAM_STR);
-           $stmt->bindParam(':lastname', $user['lastname'], PDO::PARAM_STR);
-           $stmt->bindParam(':username', $user['username'], PDO::PARAM_STR);
-           $stmt->bindParam(':email', $user['email'], PDO::PARAM_STR);
-           $stmt->bindParam(':pass', $user['pass'], PDO::PARAM_STR);
-           $stmt->bindParam(':address', $user['address'], PDO::PARAM_STR);
-           $stmt->bindParam(':city', $user['city'], PDO::PARAM_STR);
-           $stmt->bindParam(':provincia', $user['provincia'], PDO::PARAM_STR);
-           $stmt->bindParam(':avatar', $user['avatar'], PDO::PARAM_STR);
+           $stmt->bindParam('name', $user['name'], PDO::PARAM_STR);
+           $stmt->bindParam('lastname', $user['lastname'], PDO::PARAM_STR);
+           $stmt->bindParam('username', $user['username'], PDO::PARAM_STR);
+           $stmt->bindParam('email', $user['email'], PDO::PARAM_STR);
+           $stmt->bindParam('pass', $user['pass'], PDO::PARAM_STR);
+           $stmt->bindParam('address', $user['address'], PDO::PARAM_STR);
+           $stmt->bindParam('city', $user['city'], PDO::PARAM_STR);
+           $stmt->bindParam('provincia', $user['provincia'], PDO::PARAM_STR);
+           $stmt->bindParam('avatar', $user['avatar'], PDO::PARAM_STR);
 
    $stmt->execute();
 
