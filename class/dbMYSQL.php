@@ -58,6 +58,7 @@ public function createTable(){
 
     try {
       $sql = 'CREATE TABLE usuarios (
+         id int(10) unsigned NOT NULL AUTO_INCREMENT PRIMARY KEY,
          name varchar(50) NOT NULL,
          lastname varchar(50) NOT NULL,
          username varchar(50) NOT NULL,
@@ -66,8 +67,7 @@ public function createTable(){
          address varchar(50) NOT NULL,
          city varchar(50) NOT NULL,
          provincia varchar(50) NOT NULL,
-         avatar varchar(50) NOT NULL,
-         id int(10) unsigned NOT NULL AUTO_INCREMENT PRIMARY KEY
+         avatar varchar(50) NOT NULL
        )';
 
       $stmt = $db->prepare($sql);
@@ -92,51 +92,54 @@ public function createTable(){
  public function migrar(){
 
    $db = $this->connectDB();
-   //si saco esto me dice que db no está definida
+
 
   try {
    $userjson = file_get_contents('usuarios.json');
    $arrayjson = explode(PHP_EOL, $userjson);
 
-    array_pop($arrayjson);
-    foreach ($arrayjson as $user) {
-     $usuariosPHP = json_decode($user, true);
+  array_pop($arrayjson);
 
+
+    foreach ($arrayjson as $user) {
+
+     $usuariosPHP = json_decode($user, true);
 
       $sql = "INSERT INTO usuarios (name, lastname, username, email, pass, address, city, provincia, avatar) VALUES (:name, :lastname, :username, :email, :pass, :address, :city, :provincia, :avatar)";
 
-    $name = $usuariosPHP['name'];
-    $lastname = $usuariosPHP['lastname'];
-    $username = $usuariosPHP['username'];
-    $email = $usuariosPHP['email'];
-    $pass = $usuariosPHP['pass'];
-    $address = $usuariosPHP['address'];
-    $city = $usuariosPHP['city'];
-    $provincia = $usuariosPHP['provincia'];
-    $avatar = $usuariosPHP['avatar'];
+      $name = $usuariosPHP['name'];
+      $lastname = $usuariosPHP['lastname'];
+      $username = $usuariosPHP['username'];
+      $email = $usuariosPHP['email'];
+      $pass = $usuariosPHP['pass'];
+      $address = $usuariosPHP['address'];
+      $city = $usuariosPHP['city'];
+      $provincia = $usuariosPHP['provincia'];
+      $avatar = $usuariosPHP['avatar'];
 
 
-    $stmt = $db->prepare($sql);
+      $stmt = $db->prepare($sql);
 
-    $stmt->bindParam(':name', $name, PDO::PARAM_STR);
-    $stmt->bindParam(':lastname', $lastname, PDO::PARAM_STR);
-    $stmt->bindParam(':username', $username, PDO::PARAM_STR);
-    $stmt->bindParam(':email', $email, PDO::PARAM_STR);
-    $stmt->bindParam(':pass', $pass, PDO::PARAM_STR);
-    $stmt->bindParam(':address', $address, PDO::PARAM_STR);
-    $stmt->bindParam(':city', $city, PDO::PARAM_STR);
-    $stmt->bindParam(':provincia', $provincia, PDO::PARAM_STR);
-    $stmt->bindParam(':avatar', $avatar, PDO::PARAM_STR);
+      $stmt->bindParam(':name', $name, PDO::PARAM_STR);
+      $stmt->bindParam(':lastname', $lastname, PDO::PARAM_STR);
+      $stmt->bindParam(':username', $username, PDO::PARAM_STR);
+      $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+      $stmt->bindParam(':pass', $pass, PDO::PARAM_STR);
+      $stmt->bindParam(':address', $address, PDO::PARAM_STR);
+      $stmt->bindParam(':city', $city, PDO::PARAM_STR);
+      $stmt->bindParam(':provincia', $provincia, PDO::PARAM_STR);
+      $stmt->bindParam(':avatar', $avatar, PDO::PARAM_STR);
 
 
-  $stmt->execute();
+      $stmt->execute();
 
 
 
      $status = '¡Usuario insertado con éxito!';
-   }    return $stmt;
+     
+    } 
 
-
+    return true;
   }
 
     catch( PDOException $Exception ) {

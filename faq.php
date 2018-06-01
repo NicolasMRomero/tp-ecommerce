@@ -1,5 +1,9 @@
 <?php
 include_once 'header.php';
+require_once('soporte.php');
+if (!$db->connectDB()) {
+    header('location:creardb.php');
+  } 
 ?>
 
 

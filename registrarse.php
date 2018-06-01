@@ -1,5 +1,9 @@
-<?php include_once 'header.php';
+<?php 
+include_once 'header.php';
 require_once('soporte.php');
+if (!$db->connectDB()) {
+    header('location:creardb.php');
+  } 
 if ($auth->estaLogueado()) {
 		header('Location: perfil.php');
 		exit;
