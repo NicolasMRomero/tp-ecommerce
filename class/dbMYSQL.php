@@ -102,28 +102,40 @@ public function createTable(){
     foreach ($arrayjson as $user) {
      $usuariosPHP = json_decode($user, true);
 
-      $sql = "INSERT INTO usuarios (name, lastname, username, email, pass, address, city, provincia, avatar) VALUES (name, lastname, username, email, pass, address, city, provincia, avatar)";
 
-    $user = [];
-    //si no pongo esta variable como array me dice que -> Warning: Illegal string offset 'name' in /Applications/XAMPP/xamppfiles/htdocs/tp-ecommerce/class/dbMYSQL.php on line 113
+      $sql = "INSERT INTO usuarios (name, lastname, username, email, pass, address, city, provincia, avatar) VALUES (:name, :lastname, :username, :email, :pass, :address, :city, :provincia, :avatar)";
+
+    $name = $usuariosPHP['name'];
+    $lastname = $usuariosPHP['lastname'];
+    $username = $usuariosPHP['username'];
+    $email = $usuariosPHP['email'];
+    $pass = $usuariosPHP['pass'];
+    $address = $usuariosPHP['address'];
+    $city = $usuariosPHP['city'];
+    $provincia = $usuariosPHP['provincia'];
+    $avatar = $usuariosPHP['avatar'];
+
 
     $stmt = $db->prepare($sql);
-           $stmt->bindParam('name', $user['name'], PDO::PARAM_STR);
-           $stmt->bindParam('lastname', $user['lastname'], PDO::PARAM_STR);
-           $stmt->bindParam('username', $user['username'], PDO::PARAM_STR);
-           $stmt->bindParam('email', $user['email'], PDO::PARAM_STR);
-           $stmt->bindParam('pass', $user['pass'], PDO::PARAM_STR);
-           $stmt->bindParam('address', $user['address'], PDO::PARAM_STR);
-           $stmt->bindParam('city', $user['city'], PDO::PARAM_STR);
-           $stmt->bindParam('provincia', $user['provincia'], PDO::PARAM_STR);
-           $stmt->bindParam('avatar', $user['avatar'], PDO::PARAM_STR);
 
-   $stmt->execute();
+    $stmt->bindParam(':name', $name, PDO::PARAM_STR);
+    $stmt->bindParam(':lastname', $lastname, PDO::PARAM_STR);
+    $stmt->bindParam(':username', $username, PDO::PARAM_STR);
+    $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+    $stmt->bindParam(':pass', $pass, PDO::PARAM_STR);
+    $stmt->bindParam(':address', $address, PDO::PARAM_STR);
+    $stmt->bindParam(':city', $city, PDO::PARAM_STR);
+    $stmt->bindParam(':provincia', $provincia, PDO::PARAM_STR);
+    $stmt->bindParam(':avatar', $avatar, PDO::PARAM_STR);
+
+
+  $stmt->execute();
+
+
 
      $status = '¡Usuario insertado con éxito!';
    }    return $stmt;
 
-//el return no sé si va dentro o fuera del foreach. probé todas las formas y no cambia.
 
   }
 
